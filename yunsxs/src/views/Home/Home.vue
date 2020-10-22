@@ -78,7 +78,7 @@
         </div>
         <div class="home_block home_content">
            <div class="home_main">
-              <Governament></Governament>
+              <EnterXs></EnterXs>
            </div>
         </div>
         <div class="home_footer">
@@ -113,9 +113,11 @@
 </template>
 <script>
 import Governament from './components/Government'
+import EnterXs from './components/EnterXs'
 export default {
     components:{
-        Governament
+        Governament,
+        EnterXs
     },
     data() {
         return{
@@ -127,7 +129,7 @@ export default {
     },
     methods:{
         scrollMeth(){
-            console.log("---------",document.documentElement.scrollTop)
+            
             if(document.documentElement.scrollTop>20){
                 this.topBg=false;
             }
