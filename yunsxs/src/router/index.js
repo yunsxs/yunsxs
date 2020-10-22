@@ -21,6 +21,22 @@ export default new Router({
     {
       path: '/register',
       component: Register
+    },
+    {
+      path: '',
+      redirect: "/home",
+      name: 'Home',
+      meta: {
+        requireAuth: true
+      },
+      component: resolve => require(["@/views/Home/Home"], resolve),
+      children: [
+        {
+          path: '/home',
+          name: 'home',
+          component: resolve => require(["@/views/Home/Home"], resolve),
+        }
+      ]
     }
   ]
 })
