@@ -54,125 +54,108 @@
         </div>
         <div class="enterxs_right">
             <div class="enterxs_right_title">
-                <div>红色修水</div>
+                <div :class="{enter_info_active:info}" @mouseenter="mouse(true)">红色修水</div>
+                <div :class="{enter_info_active:!info}" @mouseenter="mouse(false)">人文修水</div>
             </div>
-            <div class="enterxs_right_items">
-                <div class="">秋收起义在秋水</div>
-                <div class="">修水革命史</div>
-                <div class=""></div>
-                <div class=""></div>
+            <div class="enterxs_right_items" v-if="info">
+                <div class="tag1">
+                    <div class="enter_info_btn_tag ">
+                        <i class="iconfont icon-changcheng"></i>
+                    </div>
+                    <span>秋收起义在秋水</span>
+                </div>
+                <div class="tag2">
+                    <div class="enter_info_btn_tag ">
+                        <i class="iconfont icon-lishi"></i>
+                    </div>
+                    <span>修水革命史</span>
+                </div>
+                <div class="tag3">
+                    <div class="enter_info_btn_tag">
+                        <i class="iconfont icon-gerenxinxi-copy"></i>
+                    </div>
+                    <span>修水先烈</span>
+                </div>
+                <div class="tag4">
+                    <div class="enter_info_btn_tag">
+                        <i class="iconfont icon-lvyou"></i>
+                    </div>
+                    <span>革命遗址</span>
+                </div>
             </div>
-            <div class="enterxs_travel"></div>
+            <div class="enterxs_right_items" v-else>
+                <div class="tag1">
+                    <div class="enter_info_btn_tag ">
+                        <i class="iconfont icon-changcheng"></i>
+                    </div>
+                    <span>修水名人</span>
+                </div>
+                <div class="tag2">
+                    <div class="enter_info_btn_tag ">
+                        <i class="iconfont icon-lishi"></i>
+                    </div>
+                    <span>风土人情</span>
+                </div>
+                <div class="tag3">
+                    <div class="enter_info_btn_tag">
+                        <i class="iconfont icon-gerenxinxi-copy"></i>
+                    </div>
+                    <span>非物质文化遗产</span>
+                </div>
+            </div>
+            <div class="enterxs_travel">
+                <i class="iconfont icon-lvyou2"></i>
+                <span>旅游修水</span>
+            </div>
             <div class="enterxs_right_title">
-                <div></div>
+                <div class="enter_info_active">投资修水</div>
             </div>
-            <div class="">
-                <div class=""></div>
-                <div class=""></div>
-                <div class=""></div>
-                <div class=""></div>
-                <div class=""></div>
-                <div class=""></div>
+            <div class="enterxs_list">
+                <div><i class="iconfont icon-yitouzipingtai"></i>投资平台</div>
+                <div><i class="iconfont icon-touzizhengce"></i>投资政策</div>
+                <div><i class="iconfont icon-touzizhinan"></i>投资指南</div>
+                <div><i class="iconfont icon-touzichengbendi" style="font-size: 40px;"></i>投资成本</div>
+                <div><i class="iconfont icon-zhaoshang-"></i>网上招商</div>
+                <div><i class="iconfont icon-building"></i>知名企业</div>
             </div>
         </div>
     </div>
 </template>
 <script>
 export default {
+    data(){
+        return{
+            info:true
+        }
+    },
+    methods:{
+        mouse(flag){
+           console.log("---------entered")
+           this.info=flag;
+        }
+    }
     
 }
 </script>
 <style>
-.enterxs{width: 100%;}
-.enterxs>div{float: left;}
-.enter_info{width: 60%;}
-.enter_info_content{width: 100%;}
-.enter_info_text{
-    width: 58%;
-    height: 100%;
-    float: right;
-    position: relative;
-    line-height: 25px;
-}
-.enter_info_text p{text-indent:2em;}
-.enter_info_content_btn{
-    position: relative;
-    bottom: 0px;
-}
-.enter_info_content_btn>div{
-    width: 19%;
+.newtap{
+    width: 150px;
     height: 40px;
-    float: left;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
     text-align: center;
     line-height: 40px;
-    border: 1px solid white;
-    color: blue;
-    background-color:#eee;
+    margin: 10px 0px ;
+    background: url('../../../assets/imgs/title.png') no-repeat;
+    background-size: 100% 100%;
 }
-.xuimg{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    margin-top: 10px;
-}
-.xuimg_item{
-    width: 30%;
-    height: 150px;
-    position: relative;
-}
-.xuimg_item_a{
-    width: 100%;
-    height: 30px;
-    position: absolute;
-    bottom: 0px;
-    z-index: 99;
-    text-align: center;
-    background-color: rgba(0,0,0,0.8); 
-}
-.xuimg_item_a a{
-    text-decoration: none;
-    color: white;
-    line-height: 30px;
-}
-.enterxs_right{
-    width: 35%;
-    float: right!important;
-
-}
-.enterxs_right_title{
-    width: 100%;
-    height: 50px;
-    background-color: #eee;
-
-}
-.enterxs_right_title>div{
-    width: 50%;
-    height: 100%;
-    text-align: center;
-    line-height: 50px;
-    color: white;
-}
-.enterxs_right_title>div:first-child{
-    background-color: blue;
-}
-.enterxs_right_items{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-}
-.enterxs_right_items>div{
-    width: 44%;
-    height: 40px;
-    border: 1px solid black;
-    line-height: 40px;
-    float: left;
-    margin: 10px 0px;
-}
-.enterxs_travel{
-    width: 100%;
-    height: 80px;
-    background-color: greenyellow;
-}
+.tag1>div{background-color:rgb(239,187,132);}
+.tag1:hover{background-color:rgb(239,187,132);color: white;}
+.tag2>div{background-color:rgb(135,192,226);}
+.tag2:hover{background-color:rgb(135,192,226);color: white;}
+.tag3>div{background-color:rgb(140,202,207);}
+.tag3:hover{background-color:rgb(140,202,207);color: white;}
+.tag4>div{background-color:rgb(237,151,142);}
+.tag4:hover{background-color:rgb(237,151,142);color: white;}
 </style>

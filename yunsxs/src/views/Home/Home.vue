@@ -23,7 +23,7 @@
                     </li>
                     <li>
                         <a href="#">
-                            <i class="el-icon-s-claim"></i>
+                            <i class="iconfont icon-tuichudenglu"></i>
                             <span>登出</span>
                         </a>
                     </li>
@@ -40,37 +40,37 @@
             <ul>
                 <li>
                     <a href="#">
-                        <i class=""></i>
+                        <i class="iconfont icon-icon05"></i>
                         <span>政务资讯</span>
                     </a>
                 </li>
                  <li>
                     <a href="#">
-                        <i class=""></i>
+                        <i class="iconfont icon-shui"></i>
                         <span>走进修水</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class=""></i>
+                        <i class="iconfont icon-lvyou1"></i>
                         <span>旅游度假</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class=""></i>
+                        <i class="iconfont icon-zhaopianpaizhao"></i>
                         <span>随手拍</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class=""></i>
+                        <i class="iconfont icon-shipinxinwen"></i>
                         <span>视频新闻</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class=""></i>
+                        <i class="iconfont icon-gerenxinxi-copy"></i>
                         <span>个人信息</span>
                     </a>
                 </li>
@@ -121,7 +121,7 @@ export default {
     },
     data() {
         return{
-            topBg:true
+            topBg:false
         }
     },
     mounted(){
@@ -131,10 +131,10 @@ export default {
         scrollMeth(){
             
             if(document.documentElement.scrollTop>20){
-                this.topBg=false;
+                this.topBg=true;
             }
             if(document.documentElement.scrollTop<20){
-                this.topBg=true
+                this.topBg=false
             }
         }
     }
