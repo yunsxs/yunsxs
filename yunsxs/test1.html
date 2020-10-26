@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box1 {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: pink;
+      /* left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%); */
+      /* left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto; */
+      left: 50%;
+      top: 50%;
+      margin: -25px -25px;
+    }
+
+    .box2 {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: blue;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="box1"></div>
+  <div class="box2"></div>
+  <script>
+    function splitNumber(number) {
+      let zhen = String(number).split('.')[0]
+      let xiao = String(number).split('.')[1]
+      let a = zhen.replace(/(\d{1,3})(?=(\d{3})+$)/g, '$1,')
+      return a + (xiao ? '.' + xiao : '')
+    }
+    console.log(splitNumber(1234290.122121221))
+
+    function word(arr) {
+      let obj = {}
+      for (var i = 0; i < arr.length; i++) {
+        for (var j = i + 1; j < arr.length; j++) {
+          if (!(arr[i] in obj)) {
+            if (arr[i] == arr[j]) {
+              obj[arr[i]] = true
+              break
+            }
+            if (j === arr.length - 1) {
+              obj[arr[i]] = false
+            }
+          }
+        }
+      }
+      if (!(arr[i - 1] in obj)) {
+        obj[arr[i - 1]] = false
+      }
+      console.log(obj)
+    }
+
+    function dupw(arr) {
+      let map = new Map()
+      let obj = {}
+      for (let i = 0; i < arr.length; i++) {
+        let value = arr[i]
+        if (map.has(value)) {
+          map.set(value, true)
+        } else {
+          map.set(value, false)
+        }
+      }
+      // console.log(map)
+      for ([key, value] of map) {
+        obj[key] = value
+      }
+      console.log(obj)
+    }
+    dupw(['a', 'b', 'a', 'c', 'c', 'd'])
+    dupw(['a', 'b', 'c'])
+    word(['a', 'b', 'c'])
+    word(['a', 'b', 'a', 'c', 'c', 'd'])
+
+
+    function artical(str) {
+      // 保存输出字符
+      let stack = []
+      // 输入字符串
+      let flag = 0
+      for (let a of str) {
+        switch (a) {
+          case '(':
+            // 不进行入栈，直到找到')'
+            flag++
+            break;
+          case ')':
+            flag--
+            break;
+          case '<':
+            stack.pop()
+            break
+          default:
+            if (!flag) {
+              stack.push(a)
+            }
+        }
+      }
+      return stack.join('')
+    }
+
+    console.log(artical('a(12345678909987654321234567890987654321)bkdasgtj<ufighs<jhgyu<<<<<<<<<'))
+    console.log(artical('((iagihiahfi)hc8iyt4reihbkjsdbkj)ADOLFNAZI<<<<HITLER'))
+
+  </script>
+
+</body>
+
+</html>
