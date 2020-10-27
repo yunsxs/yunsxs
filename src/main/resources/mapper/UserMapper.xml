@@ -14,11 +14,55 @@
         <result column="password" property="password"/>
         <result column="userlevel" property="userlevel"/>
         <result column="userscore" property="userscore"/>
+        <result column="phonenumber" property="phonenumber"></result>
     </resultMap>
 
     <!-- 查询 -->
     <select id="selectUserByName" parameterType="String" resultMap="userResultMap">
 		SELECT * FROM user where username=#{username}
 	</select>
+
+<!--    插入-->
+    <insert id="insertUser" parameterType="User">
+        INSERT INTO user
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="username != null" >
+                username,
+            </if>
+            <if test="password != null" >
+                password,
+            </if>
+            <if test="userlevel != null" >
+                userlevel,
+            </if>
+            <if test="userscore != null" >
+                userscore,
+            </if>
+            <if test="phonenumber != null" >
+                phonenumber,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="username != null" >
+                #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null" >
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="userlevel != null" >
+                #{userlevel,jdbcType=INTEGER},
+            </if>
+            <if test="userscore != null" >
+                #{userscore,jdbcType=INTEGER},
+            </if>
+            <if test="phonenumber != null" >
+                #{phonenumber,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <select id="selectUserByPhoneNumber" parameterType="String" resultMap="userResultMap">
+        SELECT * FROM user where phonenumber=#{phoneNumber}
+    </select>
 
 </mapper>

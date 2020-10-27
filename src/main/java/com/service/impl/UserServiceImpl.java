@@ -19,4 +19,17 @@ public class UserServiceImpl implements UserService {
         }
         return null;
     }
+
+    @Override
+    public Boolean insertUser(User user) {
+        return userMapper.insertUser(user) > 0 ? true : false;
+    }
+
+    @Override
+    public Boolean isPhoneExist(String phoneNumber) {
+        if (userMapper.selectUserByPhoneNumber(phoneNumber) != null) {
+            return true;
+        }
+        return false;
+    }
 }

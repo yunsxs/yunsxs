@@ -7,6 +7,7 @@ public class User {
     private String password;
     private int userlevel;
     private int userscore;
+    private String phonenumber;
 
     public int getUserid() {
         return userid;
@@ -22,6 +23,10 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+    public String getPhonenumber() {
+        return phonenumber;
     }
 
     public int getUserlevel() {
@@ -56,6 +61,10 @@ public class User {
         this.userscore = userscore;
     }
 
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -65,6 +74,7 @@ public class User {
                 ", password='" + password + '\'' +
                 ", userlevel=" + userlevel +
                 ", userscore=" + userscore +
+                ", phonenumber='" + phonenumber + '\'' +
                 '}';
     }
 }
