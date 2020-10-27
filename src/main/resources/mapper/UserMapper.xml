@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 连接到的接口 -->
+<mapper namespace="com.dao.UserMapper">
+
+    <!-- <insert id="addBlog" parameterType="com.wlh.entity.Blog"> </insert> -->
+    <resultMap type="User" id="userResultMap">
+        <!-- 将数据库字段与实体类属性相对应 -->
+        <!-- 主键的设置 column:数据库表字段名 property：实体类的属性名称 -->
+        <id column="userid" property="userid"/>
+        <!-- 其余字段 -->
+        <result column="username" property="username"/>
+        <result column="userrname" property="userrname"/>
+        <result column="password" property="password"/>
+        <result column="userlevel" property="userlevel"/>
+        <result column="userscore" property="userscore"/>
+    </resultMap>
+
+    <!-- 查询 -->
+    <select id="selectUserByName" parameterType="String" resultMap="userResultMap">
+		SELECT * FROM user where username=#{username}
+	</select>
+
+</mapper>

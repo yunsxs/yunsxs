@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+    <!--加载配置文件-->
+    <context:property-placeholder location="classpath:dbcp.properties"/>
+    <!--数据库连接池-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+          destroy-method="close">
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <!-- 配置初始化大小、最小、最大 -->
+        <property name="initialSize">
+            <value>1</value>
+        </property>
+        <property name="maxActive">
+            <value>5</value>
+        </property>
+        <property name="minIdle">
+            <value>1</value>
+        </property>
+        <!-- 配置获取连接等待超时的时间 -->
+        <property name="maxWait">
+            <value>60000</value>
+        </property>
+        <!-- 配置监控统计拦截的filters -->
+        <property name="filters">
+            <value>stat</value>
+        </property>
+        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        <property name="timeBetweenEvictionRunsMillis">
+            <value>60000</value>
+        </property>
+        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+        <property name="minEvictableIdleTimeMillis">
+            <value>300000</value>
+        </property>
+    </bean>
+
+    <!--整合MyBatis-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--数据库连接池-->
+        <property name="dataSource" ref="dataSource"></property>
+        <property name="typeAliasesPackage" value="com.entity"></property>
+        <property name="mapperLocations" value="classpath:mapper/*.xml"></property>
+    </bean>
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.dao"/>
+    </bean>
+
+    <!-- 注册事务管理类 -->
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- 开启事务行为 -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <!--
+    <bean id="teacherService" class="com.huhong.service.TeacherServiceImpl"/>-->
+    <context:component-scan base-package="com.service"></context:component-scan>
+
+    <!-- aop -->
+    <aop:aspectj-autoproxy/>
+</beans>
