@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6baa039a-e01a-4baf-b98e-3457aa126c6a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,13 +72,15 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\27325\IdeaProjects\yunsxs\yunsxs_api" />
+      <recent name="C:\Users\27325\IdeaProjects\yunsxs\yunsxs_api\src" />
+      <recent name="C:\Users\27325\IdeaProjects\yunsxs\yunsxs_api\src\main\resources\mapper" />
+      <recent name="C:\Users\27325\IdeaProjects\yunsxs\yunsxs_api\src\main\java\com\dao" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\27325\IdeaProjects\yunsxs\yunsxs_api\src\main\resources\mapper" />
       <recent name="C:\Users\27325\IdeaProjects\yunsxs\yunsxs_api\src\main\resources" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\27325\IdeaProjects\yunsxs\yunsxs_api\src\main\resources\mapper" />
-      <recent name="C:\Users\27325\IdeaProjects\yunsxs\yunsxs_api\src\main\java\com\dao" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -230,7 +232,7 @@
       <updated>1603761625572</updated>
       <workItem from="1603761630244" duration="6071000" />
       <workItem from="1603767796039" duration="6604000" />
-      <workItem from="1603778314021" duration="3715000" />
+      <workItem from="1603778314021" duration="3997000" />
     </task>
     <servers />
   </component>
