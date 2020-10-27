@@ -16,14 +16,4 @@ public class UserController {
     @Resource
     private UserService userService;
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    @ResponseBody
-    public String doLogin(HttpServletRequest request){
-        System.out.println("connect");
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        System.out.println(username);
-        System.out.println(password);
-        return null;
-    }
 }
