@@ -6,9 +6,8 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/index',
-      name: indexedDB,
-      component: resolve => require(["@/views/index/index"], resolve),
+      path: '/',
+      redirect: "/login"
     },
     {
       path: '',
@@ -40,6 +39,17 @@ export default new Router({
           component: resolve => require(['@/views/Home/components/VideoNews'], resolve)
         },
       ]
+    },
+    {
+      path: '/login',
+      name:'Login',
+      component: resolve => require(['@/views/login/Login'], resolve),
+      meta: {show: true}
+    },
+    {
+      path: '/register',
+      name:'Register',
+      component: resolve => require(['@/views/login/Register'], resolve)
     }
   ]
 })
