@@ -1,117 +1,95 @@
-* {
-  margin: 0px;
-  padding: 0px;
+*{
+    margin: 0px;
+    padding: 0px;
 }
-
-.home {
-  width: 100%;
-  height: 100%;
-  background-color: aquamarine;
-  overflow: hidden;
+.home{
+    width: 100%;
+    height: 100%;
+    background-color: aquamarine;
+    overflow: hidden;
 }
-
-.topbg1 {
-  transition: 1s;
-  background-color: white;
+.topbg1{transition: 0.5s; background-color: white;}
+.topNav{
+   width: 100%;
+   height: 60px;
+   position: fixed;
+   top: 0px;
+   text-align: center;
+   z-index: 999;
+   transition: 0.5s;
 }
-
-.topNav {
-  width: 100%;
-  height: 60px;
-  position: fixed;
-  top: 0px;
-  text-align: center;
-  z-index: 999;
+.nav_list{
+    float: right; 
+    position: absolute;
+    height: auto;
+    overflow: hidden;
+    top: 50%;
+    right: 100px;
+    transform: translateY(-50%);
 }
-
-.nav_list {
-  float: right;
-  position: absolute;
-  height: auto;
-  overflow: hidden;
-  top: 50%;
-  right: 100px;
-  transform: translateY(-50%);
+.nav ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
 }
-
-.nav ul {
-  list-style: none;
-  margin: 0px;
-  padding: 0px;
+.nav_list ul li{
+    float: left;
+    width: 150px;
+    border-right: 1px solid black;
 }
-
-.nav_list ul li {
-  float: left;
-  width: 150px;
-  border-right: 1px solid black;
+.nav_list ul li:last-child{border: none;}
+.nav_list ul li a{
+    text-decoration: none;
+    color: #409EFF;
+    font-size: 18px;
 }
-
-.nav_list ul li:last-child {
-  border: none;
+.nav_list ul li a i{
+    font-size: 20px;
 }
-
-.nav_list ul li a {
-  text-decoration: none;
-  color: #409EFF;
-  font-size: 18px;
+.home_block{
+    width: 80%;
+    height: auto;
+    margin: 0px auto;
 }
-
-.nav_list ul li a i {
-  font-size: 20px;
-}
-
-.home_block {
-  width: 80%;
-  height: auto;
-  margin: 0px auto;
-}
-
-.logo {
-  margin-top: 80px;
-}
-
+.logo{margin-top: 80px;}
 /*  */
 .secondNav ul {
   display: flex;
   justify-content: space-around;
   border-radius: 10px;
-  background-color: blue;
+  background-color:rgb(6,105,204);;
 }
-
-.secondNav li {
-  width: 14%;
-  height: 50px;
-  float: left;
-  font-size: 20px;
-  text-align: center;
+.secondNav li{
+   width: 14%;
+   height: 50px;
+   float: left;
+   font-size: 20px;
+   text-align: center;
 }
-
-.secondNav li a {
-  text-decoration: none;
-  color: white;
-  line-height: 50px;
+.secondNav li a{
+    text-decoration: none;
+    color: white;
+    line-height: 50px;
 }
-
+.secondNav li a i{
+    font-size: 25px;
+}
 /*  */
-.home_content {
-  /* box-sizing: border-box;
-   padding: 10px; */
-  margin-top: 20px;
-  border: 10px solid rgba(255, 255, 255, 0.8);
-  height: 100%;
-  min-height: 500px;
-  margin-bottom: 70px;
+.home_content{
+   margin-top: 20px;
+   border:10px solid rgba(255,255,255,0.8);
+   height: auto;
+   overflow: hidden;
+   margin-bottom: 70px;
 }
-
-.home_main {
-  width: 100%;
-  height: 100%;
-  min-height: 500px;
-  box-sizing: border-box;
-  padding: 10px;
-  background-color: white;
+.home_main{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: white;
 }
-
 /*  */
 .home_footer {
   width: 100%;
@@ -148,5 +126,132 @@
   display: flex;
   justify-content: space-between;
 }
+/*走进修水  */
+.enterxs{width: 100%;}
+.enterxs>div{float: left;}
+.enter_info{width: 60%;}
+.enter_info_content{width: 100%;}
+.enter_info_text{
+    width: 58%;
+    height: 100%;
+    float: right;
+    position: relative;
+    line-height: 25px;
+}
+.enter_info_text p{text-indent:2em;}
+.enter_info_content_btn{
+    position: relative;
+    bottom: 0px;
+    margin-top: 20px;
+}
+.enter_info_content_btn>div{
+    width: 19%;
+    height: 40px;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid white;
+    color: rgb(6,105,204);
+    background-color:#eee;
+}
+.enter_info_content_btn>div:hover{background-color: rgb(239,187,132);color: white;}
+.enter_info_active{
+    background-color: rgb(6,105,204);
+    color: white;
+}
+.enter_info_btn_tag{width: 35px;height: 35px;float:left;border-radius: 50%;margin: 5px 0px 5px 10px;background-color: yellowgreen;text-align: center;line-height: 35px;color: white;}
+.xuimg{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.xuimg_item{
+    width: 30%;
+    height: 150px;
+    position: relative;
+}
+.xuimg_item_a{
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    bottom: 0px;
+    z-index: 99;
+    text-align: center;
+    background-color: rgba(0,0,0,0.8); 
+}
+.xuimg_item_a a{
+    text-decoration: none;
+    color: white;
+    line-height: 30px;
+}
+.enterxs_right{
+    width: 35%;
+    float: right!important;
 
-/*  */
+}
+.enterxs_right_title{
+    width: 100%;
+    height: 50px;
+    background-color: #eee;
+
+}
+.enterxs_right_title>div{
+    width: 50%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    line-height: 50px;
+}
+.enterxs_right_items{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+.enterxs_right_items i{font-size: 20px;}
+.enterxs_right_items>div{
+    width: 48%;
+    height: 50px;
+    border: 1px solid rgba(0,0,0,0.5);
+    line-height: 50px;
+    float: left;
+    margin: 10px 0px;
+    text-align: center;
+}
+.enterxs_travel{
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+    font-size: 25px;
+    color: white;
+    margin-bottom: 10px;
+    background-color: rgb(98,176,127);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.enterxs_travel:hover{background-color: rgb(0,144,54);}
+.enterxs_travel i{font-size: 45px;color: rgb(163,235,190);}
+.enterxs_list{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.enterxs_list i{font-size: 28px;padding-right: 20px; color: rgb(95,129,180);}
+.enterxs_list>div{
+    width: 47%;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(240,243,246);
+    margin-top: 10px;
+    line-height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.enterxs_list>div:hover{background-color: rgb(239,187,132);color: white;}

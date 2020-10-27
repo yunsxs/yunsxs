@@ -117,14 +117,10 @@
   </div>
 </template>
 <script>
-import Governament from "./components/Government";
 export default {
-  components: {
-    Governament,
-  },
   data() {
     return {
-      topBg: true,
+      topBg: false,
     };
   },
   mounted() {
@@ -132,12 +128,11 @@ export default {
   },
   methods: {
     scrollMeth() {
-      console.log("---------", document.documentElement.scrollTop);
       if (document.documentElement.scrollTop > 20) {
-        this.topBg = false;
+        this.topBg = true;
       }
       if (document.documentElement.scrollTop < 20) {
-        this.topBg = true;
+        this.topBg = false;
       }
     },
   },
