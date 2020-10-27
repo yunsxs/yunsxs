@@ -38,13 +38,13 @@
         </div>
         <div class="home_block nav secondNav">
             <ul>
-                <li>
+                <li @click="jumpTo('/government')">
                     <a href="#">
                         <i class="iconfont icon-icon05"></i>
                         <span>政务资讯</span>
                     </a>
                 </li>
-                 <li>
+                 <li @click="jumpTo('/enterxs')">
                     <a href="#">
                         <i class="iconfont icon-shui"></i>
                         <span>走进修水</span>
@@ -56,13 +56,13 @@
                         <span>旅游度假</span>
                     </a>
                 </li>
-                <li>
+                <li @click="jumpTo('/photograph')">
                     <a href="#">
                         <i class="iconfont icon-zhaopianpaizhao"></i>
                         <span>随手拍</span>
                     </a>
                 </li>
-                <li>
+                <li @click="jumpTo('/videoNews')">
                     <a href="#">
                         <i class="iconfont icon-shipinxinwen"></i>
                         <span>视频新闻</span>
@@ -78,7 +78,7 @@
         </div>
         <div class="home_block home_content">
            <div class="home_main">
-              <EnterXs></EnterXs>
+              <router-view></router-view>
            </div>
         </div>
         <div class="home_footer">
@@ -99,37 +99,37 @@
                         <span>邮箱：xsxxb@163.com</span>
                     </div>
                 </div>
-                <el-image
-                style="width: 40px; height: 40px"
-                :src="require('@/assets/imgs/gaicon.png')"
-                fit="fit"></el-image>
-                <el-image
-                style="width: 70px; height: 40px"
-                :src="require('@/assets/imgs/icon-footer2.png')"
-                fit="fit"></el-image>
+                <div>
+                  <el-image
+                  style="width: 40px; height: 40px"
+                  :src="require('@/assets/imgs/gaicon.png')"
+                  fit="fit"></el-image>
+                  <el-image
+                  style="width: 70px; height: 40px"
+                  :src="require('@/assets/imgs/icon-footer2.png')"
+                  fit="fit"></el-image>
+                </div>
+                
             </div>
         </div>
-    </div>
+        
+      </div>
 </template>
 <script>
-import Governament from './components/Government'
-import EnterXs from './components/EnterXs'
 export default {
-    components:{
-        Governament,
-        EnterXs
-    },
     data() {
         return{
-            topBg:false
+            topBg:false,//导航栏class控制
         }
     },
     mounted(){
        document.addEventListener("scroll",this.scrollMeth)
     },
     methods:{
-        scrollMeth(){
-            
+        jumpTo(to){
+            this.$router.push(to)
+        },
+        scrollMeth(){ //导航栏滚动监听事件
             if(document.documentElement.scrollTop>20){
                 this.topBg=true;
             }
@@ -141,6 +141,8 @@ export default {
     
 }
 </script>
-<style>
-
+<style scoped>
+.nav ul li:hover span {
+  color: red;
+}
 </style>

@@ -6,24 +6,39 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path:'/index',
-      name:indexedDB,
-      component:resolve=>require(["@/views/index/index"],resolve),
+      path: '/index',
+      name: indexedDB,
+      component: resolve => require(["@/views/index/index"], resolve),
     },
     {
       path: '',
-      redirect: "/home",
+      redirect: "/government",
       name: 'Home',
       meta: {
         requireAuth: true
       },
-      component:resolve=>require(["@/views/Home/Home"],resolve),
-      children:[
+      component: resolve => require(["@/views/Home/Home"], resolve),
+      children: [
         {
-          path: '/home',
-          name: 'home',
-          component:resolve=>require(["@/views/Home/Home"],resolve),
-        }
+          path: '/government',
+          name: 'Government',
+          component: resolve => require(["@/views/Home/components/Government"], resolve),
+        },
+        {
+          path: '/enterxs',
+          name: 'Enterxs',
+          component: resolve => require(["@/views/Home/components/EnterXs"], resolve),
+        },
+        {
+          path: '/photograph',
+          name: 'photograph',
+          component: resolve => require(["@/views/Home/components/Photograph"], resolve)
+        },
+        {
+          path: '/videoNews',
+          name: 'videoNews',
+          component: resolve => require(['@/views/Home/components/VideoNews'], resolve)
+        },
       ]
     }
   ]

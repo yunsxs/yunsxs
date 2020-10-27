@@ -3,9 +3,12 @@
     padding: 0px;
 }
 .home{
+    position: relative;
     width: 100%;
     height: 100%;
-    background-color: aquamarine;
+    min-height: 100vh;
+    background: url('../imgs/bg1.jpg');
+    background-size: cover;
     overflow: hidden;
 }
 .topbg1{transition: 0.5s; background-color: white;}
@@ -51,9 +54,9 @@
     height: auto;
     margin: 0px auto;
 }
-.logo{margin-top: 80px;}
+.logo{margin-top: 60px;}
 /*  */
-.secondNav ul{
+.secondNav ul {
   display: flex;
   justify-content: space-around;
   border-radius: 10px;
@@ -80,7 +83,7 @@
    border:10px solid rgba(255,255,255,0.8);
    height: auto;
    overflow: hidden;
-   margin-bottom: 70px;
+   margin-bottom: 170px;
 }
 .home_main{
     width: 100%;
@@ -91,35 +94,44 @@
     background-color: white;
 }
 /*  */
-.home_footer{
-    width: 100%;
-    height: 100px;
-    margin: 0px auto;
-    background-color: rgba(0,0,0,0.8);
-    color: white;
-    overflow: hidden;
+.home_footer {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  bottom: 0px;
+  margin: 0px auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  overflow: hidden;
 }
-.home_footer_content{
-    width: 80%;
-    height: auto;
-    margin: 0px auto;
-    margin-top: 20px;
+
+.home_footer_content {
+  width: 85%;
+  height: auto;
+  margin: 0px auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
 }
-.home_footer_content>div{
-    float: left;
+
+.home_footer_content>div {
+  float: left;
 }
-.home_footer_text>div{
-     text-align: center;
+
+.home_footer_text>div {
+  text-align: center;
 }
-.home_footer_text>div span{
-   font-size: 15px;
-    padding: 8px 5px 0px 5px;
-    margin-top: 8px;
+
+.home_footer_text>div span {
+  font-size: 15px;
+  padding: 8px 5px 0px 5px;
+  margin-top: 8px;
 }
-.home_foot_icons{
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
+
+.home_foot_icons {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 /*走进修水  */
 .enterxs{width: 100%;}
