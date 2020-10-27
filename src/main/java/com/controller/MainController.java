@@ -25,7 +25,6 @@ import java.util.Random;
 @RequestMapping("api")
 public class MainController {
     private Logger logger = Logger.getLogger(MainController.class);
-    private Map<String, User> sessions = new HashMap<String, User>();
 
     @Resource
     private UserService userService;

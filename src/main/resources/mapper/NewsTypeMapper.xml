@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 连接到的接口 -->
+<mapper namespace="com.dao.NewsTypeMapper">
+
+    <!-- <insert id="addBlog" parameterType="com.wlh.entity.Blog"> </insert> -->
+    <resultMap type="NewsType" id="newsTypeResultMap">
+        <id column="type_id" property="typeId"></id>
+        <result column="type_name" property="typeName"></result>
+
+        <collection property="children" javaType="ArrayList" ofType="News">
+            <id column="news_id" property="news_id"/>
+            <!-- 其余字段 -->
+            <result column="up" property="up"/>
+            <result column="substance" property="substance"/>
+            <result column="news_title" property="news_title"/>
+            <result column="second_title" property="second_title"/>
+            <result column="reg-time" property="reg_time"></result>
+        </collection>
+    </resultMap>
+
+    <!-- 查询 -->
+    <select id="getAllNewsType" resultMap="newsTypeResultMap">
+		SELECT *
+        FROM newstype
+        LEFT JOIN news
+        on newstype.type_id = news.type_id
+        ORDER BY newstype.type_id
+	</select>
+</mapper>
