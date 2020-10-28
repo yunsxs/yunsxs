@@ -7,12 +7,11 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import './assets/css/home.css'
 import '@/assets/font/icon/iconfont.css'
-import '@/assets/font/icon/demo.css'
 import axios from 'axios'
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 
-axios.defaults.baseURL = 'http://localhost:8081/api/'
+axios.defaults.baseURL = 'http://localhost:8081/yunsxs_api_war/api/'
 
 Vue.prototype.$http = axios
 
