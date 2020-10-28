@@ -96,7 +96,8 @@ export default {
         const { data: res } = await this.$http.post('login', this.loginForm)
         if (res.code !== 200) return this.$message.error('用户名或者密码错误')
         this.$message.success('登录成功')
-        window.sessionStorage.setItem('username', res.data.username)
+        // 存储user信息
+        this.$store.commit('addUserInfo', res.data)
         this.$router.push('/home')
       })
     },
