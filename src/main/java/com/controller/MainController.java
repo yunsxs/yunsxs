@@ -40,7 +40,7 @@ public class MainController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
-    public Result doLogin(@RequestBody User user, Model model, HttpServletRequest request, HttpServletResponse response) {
+    public Result doLogin(@RequestBody User user, Model model) {
         logger.info("Login run");
         User foundUser = userService.getUserByNameAndPwd(user.getUsername(), user.getPassword());
         Result result = null;
@@ -65,7 +65,7 @@ public class MainController {
         }
         Boolean isInserted = userService.insertUser(user);
         if (isInserted) {
-            result = new Result(ResultStatus.SUCCESS);
+            result = new Result(ResultStatus.SUCCESS, user);
             result.setMessage("注册成功");
         } else {
             result = new Result(ResultStatus.ERROR);

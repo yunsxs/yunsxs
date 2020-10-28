@@ -32,4 +32,15 @@ public class UserServiceImpl implements UserService {
         }
         return false;
     }
+
+    @Override
+    public Boolean updateUserById(User user) {
+        int changeNumber = userMapper.updateUser(user);
+        return changeNumber > 0 ? true : false;
+    }
+
+    @Override
+    public User getUserById(int userId) {
+        return userMapper.selectUserById(userId);
+    }
 }

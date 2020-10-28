@@ -16,6 +16,7 @@
             <result column="news_title" property="news_title"/>
             <result column="second_title" property="second_title"/>
             <result column="reg-time" property="reg_time"></result>
+            <result column="news_detail" property="news_detail"></result>
         </collection>
     </resultMap>
 

@@ -7,26 +7,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6baa039a-e01a-4baf-b98e-3457aa126c6a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/controller/NewsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dao/NewsMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dao/NewsTypeMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/entity/News.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/entity/NewsType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/NewsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/NewsTypeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/impl/NewsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/service/impl/NewsTypeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/NewsMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/NewsTypeMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/UserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dao/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/entity/News.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/entity/News.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/NewsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/NewsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/NewsTypeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/NewsTypeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DaoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/UserServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/UserServiceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/UserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/UserTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/dao/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dao/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/UserServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/UserTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/yunsxs_api.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunsxs_api.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/yunsxs_api/WEB-INF/classes/com/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunsxs_api/WEB-INF/classes/com/controller/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunsxs_api/WEB-INF/classes/com/dao/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunsxs_api/WEB-INF/classes/com/dao/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunsxs_api/WEB-INF/classes/com/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunsxs_api/WEB-INF/classes/com/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunsxs_api/WEB-INF/classes/com/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunsxs_api/WEB-INF/classes/com/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/yunsxs_api/WEB-INF/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/yunsxs_api/WEB-INF/classes/mapper/UserMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,51 +114,51 @@
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.9">
-    <configuration name="UserServiceTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DaoTest.testGetUserById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="yunsxs_api" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserServiceTest" />
-      <option name="METHOD_NAME" value="test1" />
+      <option name="MAIN_CLASS_NAME" value="DaoTest" />
+      <option name="METHOD_NAME" value="testGetUserById" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DaoTest.testInsertUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="yunsxs_api" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="DaoTest" />
+      <option name="METHOD_NAME" value="testInsertUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DaoTest.testUpdateUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="yunsxs_api" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DaoTest" />
+      <option name="METHOD_NAME" value="testUpdateUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServiceTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="yunsxs_api" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ServiceTest" />
       <option name="METHOD_NAME" value="test2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ServiceTest.testGetAllNews" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="yunsxs_api" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserTest" />
-      <option name="METHOD_NAME" value="test1" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="yunsxs_api" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserTest" />
-      <option name="METHOD_NAME" value="test2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserTest.test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="yunsxs_api" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserTest" />
-      <option name="METHOD_NAME" value="test3" />
+      <option name="MAIN_CLASS_NAME" value="ServiceTest" />
+      <option name="METHOD_NAME" value="testGetAllNews" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -233,20 +238,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.UserServiceTest.test1" />
-      <item itemvalue="JUnit.UserTest" />
       <item itemvalue="Tomcat Server.Tomcat 8.5.9" />
-      <item itemvalue="JUnit.UserTest.test2" />
       <item itemvalue="JUnit.UserServiceTest.test2" />
-      <item itemvalue="JUnit.UserTest.test3" />
+      <item itemvalue="JUnit.UserServiceTest.testGetAllNews" />
+      <item itemvalue="JUnit.DaoTest.testUpdateUser" />
+      <item itemvalue="JUnit.DaoTest.testGetUserById" />
+      <item itemvalue="JUnit.DaoTest.testInsertUser" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserTest.test3" />
-        <item itemvalue="JUnit.UserTest.test2" />
+        <item itemvalue="JUnit.DaoTest.testGetUserById" />
+        <item itemvalue="JUnit.DaoTest.testInsertUser" />
+        <item itemvalue="JUnit.DaoTest.testUpdateUser" />
+        <item itemvalue="JUnit.UserServiceTest.testGetAllNews" />
         <item itemvalue="JUnit.UserServiceTest.test2" />
-        <item itemvalue="JUnit.UserServiceTest.test1" />
-        <item itemvalue="JUnit.UserTest" />
       </list>
     </recent_temporary>
   </component>
@@ -275,7 +280,7 @@
       <workItem from="1603761630244" duration="6071000" />
       <workItem from="1603767796039" duration="6604000" />
       <workItem from="1603778314021" duration="15003000" />
-      <workItem from="1603798512895" duration="12809000" />
+      <workItem from="1603798512895" duration="31172000" />
     </task>
     <servers />
   </component>
@@ -300,10 +305,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1603790787299" />
-    <state x="446" y="42" key="#com.intellij.ide.util.MemberChooser" timestamp="1603816483930">
+    <state x="446" y="42" key="#com.intellij.ide.util.MemberChooser" timestamp="1603865341524">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="446" y="42" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1603816483930" />
+    <state x="446" y="42" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1603865341524" />
     <state x="243" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603768677612">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -320,54 +325,54 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="453" y="237" key="Github.CreateGistDialog/0.0.1280.680@0.0.1280.680" timestamp="1603784408199" />
-    <state width="1237" height="431" key="GridCell.Tab.0.bottom" timestamp="1603816686918">
+    <state width="1237" height="265" key="GridCell.Tab.0.bottom" timestamp="1603871845581">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="431" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1603816686918" />
-    <state width="1237" height="431" key="GridCell.Tab.0.center" timestamp="1603816686918">
+    <state width="1237" height="265" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1603871845581" />
+    <state width="1237" height="265" key="GridCell.Tab.0.center" timestamp="1603871845581">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="431" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1603816686918" />
-    <state width="1237" height="431" key="GridCell.Tab.0.left" timestamp="1603816686918">
+    <state width="1237" height="265" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1603871845581" />
+    <state width="1237" height="265" key="GridCell.Tab.0.left" timestamp="1603871845580">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="431" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1603816686918" />
-    <state width="1237" height="431" key="GridCell.Tab.0.right" timestamp="1603816686918">
+    <state width="1237" height="265" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1603871845580" />
+    <state width="1237" height="265" key="GridCell.Tab.0.right" timestamp="1603871845581">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="431" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1603816686918" />
-    <state width="1237" height="431" key="GridCell.Tab.1.bottom" timestamp="1603816686920">
+    <state width="1237" height="265" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1603871845581" />
+    <state width="1237" height="265" key="GridCell.Tab.1.bottom" timestamp="1603871845581">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="431" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1603816686920" />
-    <state width="1237" height="431" key="GridCell.Tab.1.center" timestamp="1603816686920">
+    <state width="1237" height="265" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1603871845581" />
+    <state width="1237" height="265" key="GridCell.Tab.1.center" timestamp="1603871845581">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="431" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1603816686920" />
-    <state width="1237" height="431" key="GridCell.Tab.1.left" timestamp="1603816686919">
+    <state width="1237" height="265" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1603871845581" />
+    <state width="1237" height="265" key="GridCell.Tab.1.left" timestamp="1603871845581">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="431" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1603816686919" />
-    <state width="1237" height="431" key="GridCell.Tab.1.right" timestamp="1603816686920">
+    <state width="1237" height="265" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1603871845581" />
+    <state width="1237" height="265" key="GridCell.Tab.1.right" timestamp="1603871845581">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="431" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1603816686920" />
-    <state width="1237" height="431" key="GridCell.Tab.2.bottom" timestamp="1603816686921">
+    <state width="1237" height="265" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1603871845581" />
+    <state width="1237" height="265" key="GridCell.Tab.2.bottom" timestamp="1603871845581">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="431" key="GridCell.Tab.2.bottom/0.0.1280.680@0.0.1280.680" timestamp="1603816686921" />
-    <state width="1237" height="431" key="GridCell.Tab.2.center" timestamp="1603816686920">
+    <state width="1237" height="265" key="GridCell.Tab.2.bottom/0.0.1280.680@0.0.1280.680" timestamp="1603871845581" />
+    <state width="1237" height="265" key="GridCell.Tab.2.center" timestamp="1603871845581">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="431" key="GridCell.Tab.2.center/0.0.1280.680@0.0.1280.680" timestamp="1603816686920" />
-    <state width="1237" height="431" key="GridCell.Tab.2.left" timestamp="1603816686920">
+    <state width="1237" height="265" key="GridCell.Tab.2.center/0.0.1280.680@0.0.1280.680" timestamp="1603871845581" />
+    <state width="1237" height="265" key="GridCell.Tab.2.left" timestamp="1603871845581">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="431" key="GridCell.Tab.2.left/0.0.1280.680@0.0.1280.680" timestamp="1603816686920" />
-    <state width="1237" height="431" key="GridCell.Tab.2.right" timestamp="1603816686921">
+    <state width="1237" height="265" key="GridCell.Tab.2.left/0.0.1280.680@0.0.1280.680" timestamp="1603871845581" />
+    <state width="1237" height="265" key="GridCell.Tab.2.right" timestamp="1603871845581">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="431" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1603816686921" />
+    <state width="1237" height="265" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1603871845581" />
     <state width="1237" height="327" key="GridCell.Tab.3.bottom" timestamp="1603779282593">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -412,10 +417,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="325" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1603798513155" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1603797600072">
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1603866580390">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1603797600072" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1603866580390" />
     <state x="315" y="24" key="spring file set editor" timestamp="1603765385541">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

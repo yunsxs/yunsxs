@@ -8,6 +8,7 @@ public class News {
     private String news_title;
     private String second_title;
     private String reg_time;
+    private String news_detail;
 
     public int getNews_id() {
         return news_id;
@@ -35,6 +36,10 @@ public class News {
 
     public String getReg_time() {
         return reg_time;
+    }
+
+    public String getNews_detail() {
+        return news_detail;
     }
 
     public void setNews_id(int news_id) {
@@ -65,16 +70,21 @@ public class News {
         this.reg_time = reg_time;
     }
 
+    public void setNews_detail(String news_detail) {
+        this.news_detail = news_detail;
+    }
+
     @Override
     public String toString() {
         return "News{" +
                 "news_id=" + news_id +
-                ", type='" + type + '\'' +
+                ", type=" + type +
                 ", up='" + up + '\'' +
                 ", substance='" + substance + '\'' +
                 ", news_title='" + news_title + '\'' +
                 ", second_title='" + second_title + '\'' +
                 ", reg_time='" + reg_time + '\'' +
+                ", news_detail='" + news_detail + '\'' +
                 '}';
     }
 }
