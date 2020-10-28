@@ -118,17 +118,18 @@ export default {
   position: relative;
 }
 
-.logo {
+.register_content .logo {
   position: absolute;
   top: 5%;
   left: 5%;
+  margin-top: 0px;
 }
 
 .logo .title {
   /* line-height: 130px; */
   font-size: 40px;
   text-shadow: 5px 5px 7px #696565, 0px 0px 2px black;
-  color: #409EFF;
+  color: #409eff;
   vertical-align: middle;
   /* font-style: italic; */
 }

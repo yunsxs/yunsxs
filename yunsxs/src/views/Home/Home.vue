@@ -138,8 +138,8 @@ export default {
             }
         }
     }
-    
-}
+  }
+
 </script>
 <style scoped>
 .nav ul li:hover span {
