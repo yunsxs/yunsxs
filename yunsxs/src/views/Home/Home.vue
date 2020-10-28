@@ -120,7 +120,7 @@
 <script>
 export default {
   created() {
-    if (Object.keys(this.$store.state.userInfo).length === 0) {
+    if(!window.sessionStorage.getItem('userInfo')){
       this.$router.push('/login')
     }
   },
@@ -146,7 +146,7 @@ export default {
       }
     },
     logOut() {
-      this.$store.commit('clearUserInfo')
+      window.sessionStorage.clear()
       this.$router.push('/login')
     },
   },

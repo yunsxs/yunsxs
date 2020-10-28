@@ -97,7 +97,7 @@ export default {
         if (res.code !== 200) return this.$message.error('用户名或者密码错误')
         this.$message.success('登录成功')
         // 存储user信息
-        this.$store.commit('addUserInfo', res.data)
+        window.sessionStorage.setItem('userInfo', JSON.stringify(res.data))
         this.$router.push('/home')
       })
     },

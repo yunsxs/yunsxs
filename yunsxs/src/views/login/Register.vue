@@ -131,7 +131,7 @@ export default {
           })
           if (res.code !== 200) return this.$message.error(res.message)
           this.$message.success('注册成功')
-          this.$store.commit('addUserInfo', res.data)
+          window.sessionStorage.setItem('userInfo', JSON.stringify(res.data))
           this.$router.push('/home')
         }
       })

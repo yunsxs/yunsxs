@@ -3,23 +3,23 @@
     <div class="user_head">
       <div class="head_pic"></div>
       <div class="head_msg">
-        <div class="head_name">用户昵称名</div>
+        <div class="head_name">{{userInfo.username}}</div>
         <div class="head_divide"></div>
       </div>
     </div>
     <div class="user_body">
       <ul class="user_imf">
-        <li>用户ID:</li>
+        <li>用户ID: {{userInfo.userid}}</li>
         <li>
           用户真实姓名:
-          <span v-show="!isEdit">{{userInfo.username}}</span>
-          <input v-show="isEdit" v-model="userInfo.username" />
+          <span v-show="!isEdit">{{userInfo.userrname}}</span>
+          <input v-show="isEdit" v-model="userInfo.userrname" />
           <!-- <i class="iconfont icon-xiugai edit" @click="showEdit"></i> -->
         </li>
         <li>
           用户电话号码:
-          <span v-show="!isEdit">{{userInfo.phoneNumber}}</span>
-          <input v-show="isEdit" v-model="userInfo.phoneNumber" />
+          <span v-show="!isEdit">{{userInfo.phonenumber}}</span>
+          <input v-show="isEdit" v-model="userInfo.phonenumber" />
           <!-- <i class="iconfont icon-xiugai edit" @click="showEdit"></i> -->
         </li>
         <li>
@@ -32,18 +32,22 @@
 </template>
 <script>
 export default {
+  created() {
+    this.userInfo = JSON.parse(window.sessionStorage.getItem('userInfo'))
+  },
   data() {
     return {
-      userInfo: {
-        username: 'wanxeuhua',
-        phoneNumber: '11111'
-      },
+      userInfo: {},
       isEdit: false
     }
   },
   methods: {
     showEdit() {
       this.isEdit = !this.isEdit
+      if(!this.isEdit){
+        // 开始修改
+        
+      }
     }
   }
 }
