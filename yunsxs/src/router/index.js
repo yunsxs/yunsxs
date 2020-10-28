@@ -38,6 +38,16 @@ export default new Router({
           name: 'videoNews',
           component: resolve => require(['@/views/Home/components/VideoNews'], resolve)
         },
+        {
+          path: '/travel',
+          name: 'Travel',
+          component: resolve => require(["@/views/Home/components/Travel"], resolve)
+        },
+        {
+          path: '/user',
+          name: 'User',
+          component: resolve => require(["@/views/Home/components/User"], resolve)
+        }
       ]
     },
     {

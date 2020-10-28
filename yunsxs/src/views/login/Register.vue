@@ -161,6 +161,7 @@ export default {
   position: absolute;
   top: 5%;
   left: 5%;
+  margin-top: 0px;
 }
 
 .register_content .logo .title {
