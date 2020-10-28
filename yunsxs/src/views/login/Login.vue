@@ -76,7 +76,11 @@ export default {
       this.$router.push('/register')
     },
     handleLogin() {
-      this.$refs.loginFormRef.validate(valid => {})
+      this.$refs.loginFormRef.validate(valid => {
+        if(valid){
+          this.$router.push('/home')
+        }
+      })
     }
   }
 }

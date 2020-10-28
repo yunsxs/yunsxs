@@ -23,8 +23,8 @@ export default new Router({
       component: Register
     },
     {
-      path: '',
-      redirect: "/home",
+      path: '/home',
+      redirect: "/government",
       name: 'Home',
       meta: {
         requireAuth: true
@@ -32,9 +32,19 @@ export default new Router({
       component: resolve => require(["@/views/Home/Home"], resolve),
       children: [
         {
-          path: '/home',
-          name: 'home',
-          component: resolve => require(["@/views/Home/Home"], resolve),
+          path: '/government',
+          name: 'Government',
+          component: resolve => require(["@/views/Home/components/Government"], resolve),
+        },
+        {
+          path: '/travel',
+          name: 'Travel',
+          component: resolve => require(["@/views/Home/components/Travel"], resolve)
+        },
+        {
+          path: '/user',
+          name: 'User',
+          component: resolve => require(["@/views/Home/components/User"], resolve)
         }
       ]
     }

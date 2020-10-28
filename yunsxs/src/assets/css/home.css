@@ -1,0 +1,120 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.home{
+    width: 100%;
+    height: 100%;
+    background-color: aquamarine;
+    overflow: hidden;
+}
+.topbg1{transition: 1s; background-color: white;}
+.topNav{
+   width: 100%;
+   height: 60px;
+   position: fixed;
+   top: 0px;
+   text-align: center;
+   z-index: 999;
+}
+.nav_list{
+    float: right; 
+    position: absolute;
+    height: auto;
+    overflow: hidden;
+    top: 50%;
+    right: 100px;
+    transform: translateY(-50%);
+}
+.nav ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.nav_list ul li{
+    float: left;
+    width: 150px;
+    border-right: 1px solid black;
+}
+.nav_list ul li:last-child{border: none;}
+.nav_list ul li a{
+    text-decoration: none;
+    color: #409EFF;
+    font-size: 18px;
+}
+.nav_list ul li a i{
+    font-size: 20px;
+}
+.home_block{
+    width: 80%;
+    height: auto;
+    margin: 0px auto;
+}
+.logo{margin-top: 80px;}
+/*  */
+.secondNav ul{
+  display: flex;
+  justify-content: space-around;
+  border-radius: 10px;
+  background-color: blue;
+}
+.secondNav li{
+   width: 14%;
+   height: 50px;
+   float: left;
+   font-size: 20px;
+   text-align: center;
+}
+.secondNav li a{
+    text-decoration: none;
+    color: white;
+    line-height: 50px;
+}
+/*  */
+.home_content{
+   /* box-sizing: border-box;
+   padding: 10px; */
+   margin-top: 20px;
+   border:10px solid rgba(255,255,255,0.8);
+   height: 500px;
+   margin-bottom: 70px;
+}
+.home_main{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: white;
+}
+/*  */
+.home_footer{
+    width: 100%;
+    height: 100px;
+    margin: 0px auto;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    overflow: hidden;
+}
+.home_footer_content{
+    width: 80%;
+    height: auto;
+    margin: 0px auto;
+    margin-top: 20px;
+}
+.home_footer_content>div{
+    float: left;
+}
+.home_footer_text>div{
+     text-align: center;
+}
+.home_footer_text>div span{
+   font-size: 15px;
+    padding: 8px 5px 0px 5px;
+    margin-top: 8px;
+}
+.home_foot_icons{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+/*  */
