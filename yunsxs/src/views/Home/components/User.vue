@@ -23,6 +23,12 @@
           <!-- <i class="iconfont icon-xiugai edit" @click="showEdit"></i> -->
         </li>
         <li>
+          用户等级:
+        </li>
+        <li>
+          用户积分:
+        </li>
+        <li>
             <span class="user_change">点击进行个人信息修改</span>
             <i class="iconfont icon-xiugai edit" @click="showEdit"></i>
         </li>
@@ -101,8 +107,8 @@ export default {
 }
 .user_body .user_imf li {
   list-style: none;
-  font-size: 22px;
-  padding: 20px;
+  font-size: 18px;
+  padding: 10px;
 }
 .edit {
   color: pink;
