@@ -32,6 +32,7 @@
           <span>发布时间：{{ news.reg_time }}</span>
         </div>
         <div class="news_detail" v-html="news.substance"></div>
+        <div style="height:100px;"></div>
       </div>
     </el-main>
   </el-container>
@@ -60,7 +61,6 @@ export default {
     async getAllNewsList() {
       const { data: res } = await this.$http.get('news/getAllNews')
       if (res.code !== 200) return this.$message.error('获取新闻列表失败')
-      console.log(res)
       this.news = res.data[0].children[0]
       this.defaultId = res.data[0].children[0].news_id.toString()
       this.newsType = res.data

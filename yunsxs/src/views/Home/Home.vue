@@ -120,7 +120,7 @@
 <script>
 export default {
   created() {
-    if(!window.sessionStorage.getItem('userInfo')){
+    if(!window.sessionStorage.getItem('userId')){
       this.$router.push('/login')
     }
   },
