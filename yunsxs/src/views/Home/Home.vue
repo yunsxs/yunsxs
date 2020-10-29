@@ -35,37 +35,37 @@
         </div>
         <div class="home_block nav secondNav">
             <ul>
-                <li @click="jumpTo('/government')">
+                <li @click.prevent="jumpTo('/government')">
                     <a href="#">
                         <i class="iconfont icon-icon05"></i>
                         <span>政务资讯</span>
                     </a>
                 </li>
-                 <li @click="jumpTo('/enterxs')">
+                 <li @click.prevent="jumpTo('/enterxs')">
                     <a href="#">
                         <i class="iconfont icon-shui"></i>
                         <span>走进修水</span>
                     </a>
                 </li>
-                <li @click="jumpTo('/travel')">
+                <li @click.prevent="jumpTo('/travel')">
                     <a href="#">
                         <i class="iconfont icon-lvyou1"></i>
                         <span>旅游度假</span>
                     </a>
                 </li>
-                <li @click="jumpTo('/photograph')">
+                <li @click.prevent="jumpTo('/photograph')">
                     <a href="#">
                         <i class="iconfont icon-zhaopianpaizhao"></i>
                         <span>随手拍</span>
                     </a>
                 </li>
-                <li @click="jumpTo('/videoNews')">
+                <li @click.prevent="jumpTo('/videoNews')">
                     <a href="#">
                         <i class="iconfont icon-shipinxinwen"></i>
                         <span>视频新闻</span>
                     </a>
                 </li>
-                <li @click="jumpTo('/user')">
+                <li @click.prevent="jumpTo('/user')">
                     <a href="#">
                         <i class="iconfont icon-gerenxinxi-copy"></i>
                         <span>个人信息</span>
