@@ -7,7 +7,7 @@
           type="textarea"
           :rows="4"
           placeholder="说点什么吧"
-          v-model="textarea"
+          v-model="blog.content"
         >
         </el-input>
         <el-upload
@@ -15,7 +15,6 @@
           ref="upload"
           :action="uploadUrl"
           :on-success="handleSuccess"
-          :on-change="handleChange"
           :on-preview="handlePictureCardPreview"
           :on-remove="handleRemove"
           list-type="picture-card"
@@ -28,6 +27,8 @@
         <el-dialog :visible.sync="dialogVisible">
           <img width="100%" :src="dialogImageUrl" alt="" />
         </el-dialog>
+        <!-- 上传按钮 -->
+        <el-button type="primary" @click="handleSubmit">点击发布</el-button>
       </div>
       <div class="text_container" v-for="one in allBlog" :key="one.blogid">
         <!-- 头像区域 -->
@@ -47,13 +48,16 @@
             <el-image
               v-for="pic in one.pictures"
               :key="pic"
-              style="width: 33%; height: 33%"
-              src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
-              fit="fill"
-              :preview-src-list="[
-                'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
-              ]"
-            ></el-image>
+              style="width: 32.5%; height: 195px; margin-right: 5px"
+              :src="baseURL + pic"
+              :preview-src-list="showPics(one.pictures)"
+              fit="cover"
+              lazy
+            >
+              <div slot="error" class="image-slot">
+                <i class="el-icon-picture-outline"></i>
+              </div>
+            </el-image>
           </div>
         </div>
       </div>
@@ -70,35 +74,39 @@ export default {
     return {
       circleUrl:
         'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
-      topHeight: 0,
-      textarea: '',
-      fileList: [],
       imgDialogVisible: false,
-      uploadUrl: 'http://localhost:8081/yunsxs_api_war/api/upload',
+      // 图片上传到路径
+      uploadUrl: 'http://localhost:8081/yunsxs_api/api/upload',
+      baseURL: 'http://localhost:8081/yunsxs_api/',
       dialogVisible: false,
       dialogImageUrl: '',
       blog: {
+        userid: '',
         content: '',
         pictures: [],
-        time: '',
+        time: ''
       },
-      allBlog: {},
+      // 所有的随手拍内容
+      allBlog: {}
     }
   },
   methods: {
     handleSuccess(res, file) {
-      console.log(res, file)
-    },
-    handleChange(file) {
-      this.fileList.push(file)
+      if (res.code !== 200)
+        return this.$message.error('上传图片失败，请重新上传')
+      this.blog.pictures.push(res.data.path)
     },
     handlePictureCardPreview(file) {
       this.dialogVisible = true
       this.dialogImageUrl = file.url
     },
+    // 处理图片删除效果
     handleRemove(file) {
-      const index = this.fileList.indexOf(file)
-      this.fileList.splice(index, 1)
+      const filePath = file.response.data.path
+      const index = this.blog.pictures.indexOf(filePath)
+      if (index >= 0) {
+        this.blog.pictures.splice(index, 1)
+      }
     },
     async getAllBlog() {
       const { data: res } = await this.$http.get('blog/getAllBlog')
@@ -106,9 +114,31 @@ export default {
       this.allBlog.forEach((v) => {
         v.pictures = v.pictures ? v.pictures.split(';') : []
       })
-      console.log(this.allBlog)
     },
-  },
+    async handleSubmit() {
+      let postBlog = JSON.parse(JSON.stringify(this.blog))
+      if (!postBlog.content.trim() && postBlog.pictures.length === 0) {
+        return this.$message.error('内容不能为空')
+      }
+      postBlog.userid = window.sessionStorage.getItem('userId')
+      postBlog.time = new Date().toLocaleString()
+      postBlog.pictures = postBlog.pictures.join(';')
+      const { data: res } = await this.$http.post('blog/insert', postBlog)
+      if (res.code !== 200) return this.$message.error('发布失败')
+      this.$message.success('发布成功')
+      this.blog = {
+        userid: '',
+        content: '',
+        pictures: [],
+        time: ''
+      }
+      this.$refs.upload.clearFiles()
+      this.getAllBlog()
+    },
+    showPics(picList) {
+      return picList ? picList.map((v) => this.baseURL + v) : []
+    }
+  }
 }
 </script>
 
@@ -128,6 +158,7 @@ export default {
   padding: 20px;
   box-shadow: 0 0 10px #ccc;
   margin-bottom: 30px;
+  transition: all 12s;
 }
 .text_info {
   margin-bottom: 20px;

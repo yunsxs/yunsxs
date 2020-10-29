@@ -12,7 +12,7 @@ import axios from 'axios'
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 
-axios.defaults.baseURL = 'http://localhost:8081/yunsxs_api_war/api/'
+axios.defaults.baseURL = 'http://localhost:8081/yunsxs_api/api/'
 
 Vue.prototype.$http = axios
 
