@@ -5,8 +5,8 @@ public class User {
     private String username;
     private String userrname;
     private String password;
-    private int userlevel;
-    private int userscore;
+    private int userlevel = 1;
+    private int userscore = 0;
     private String phonenumber;
 
     public int getUserid() {
