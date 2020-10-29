@@ -1,7 +1,7 @@
 <template>
   <div class="register_content">
     <div class="logo">
-      <img src="./images/logo.jpg" alt />
+      <img src="./images/logo.png" alt />
       <span class="title">云上修水</span>
     </div>
     <div class="register_box">

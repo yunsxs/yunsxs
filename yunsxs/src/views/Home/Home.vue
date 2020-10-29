@@ -4,10 +4,7 @@
             <div class="nav_list">
                 <ul>
                     <li>
-                        <a href="#">
-                            <i class="el-icon-star-off"></i>
-                            <span>积分管理</span>
-                        </a>
+                        <score :score="200" :list="scoreList"></score>
                     </li>
                     <li>
                         <a href="#">
@@ -116,10 +113,14 @@
       </div>
 </template>
 <script>
+import score from './components/Score'
 export default {
+    components:{score},
     data() {
         return{
             topBg:false,//导航栏class控制
+            scoreList:[{name:'签到',score:2},{name:'补全信息',score:10},{name:'签到',score:2},
+            {name:'发布随手拍',score:3},{name:'签到',score:2},{name:'发布随手拍',score:3}]
         }
     },
     mounted(){

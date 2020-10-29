@@ -65,6 +65,11 @@ export default new Router({
       path: '/register',
       name:'Register',
       component: resolve => require(['@/views/login/Register'], resolve)
+    },
+    {
+      path: '/index',
+      name:'index',
+      component: resolve => require(['@/views/index/index'], resolve)
     }
   ]
 })

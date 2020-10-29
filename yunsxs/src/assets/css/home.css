@@ -41,7 +41,7 @@
     border-right: 1px solid black;
 }
 .nav_list ul li:last-child{border: none;}
-.nav_list ul li a{
+.nav_list ul li a,.list_a{
     text-decoration: none;
     color: #409EFF;
     font-size: 18px;
