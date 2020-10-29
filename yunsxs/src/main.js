@@ -16,6 +16,22 @@ axios.defaults.baseURL = 'http://localhost:8081/yunsxs_api/api/'
 
 Vue.prototype.$http = axios
 
+Vue.prototype.$message = function (msg) {
+  ElementUI.Message(msg)
+}
+Vue.prototype.$message.success = function (msg) {
+  return ElementUI.Message.success({
+    message: msg,
+    duration: 1000
+  })
+}
+Vue.prototype.$message.error = function (msg) {
+  return ElementUI.Message.error({
+    message: msg,
+    duration: 1000
+  })
+}
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

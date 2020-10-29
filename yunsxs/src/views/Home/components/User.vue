@@ -9,7 +9,7 @@
           <el-progress
             :text-inside="false"
             :stroke-width="25"
-            :percentage="12.5 + (userInfo.userscore / this.level_max * 100)*0.875"
+            :percentage="len"
           ></el-progress>
           <span class="level_span">Lv{{userInfo.userlevel}}</span>
           <span class="level_score">{{userInfo.userscore}} / {{this.level_max}}</span>
@@ -118,6 +118,11 @@ export default {
         this.getUserInfo();
       }
     }
+  },
+  computed: {
+    len() {
+      return 12.5 + (this.userInfo.userscore / this.level_max * 100)*0.875
+    }
   }
 };
 </script>
@@ -175,10 +180,6 @@ export default {
   list-style: none;
   font-size: 18px;
   padding: 10px;
-}
-
-.user_imf li:nth-child(even) {
-  /* background-color: rgb(242, 243, 246); */
 }
 
 .user_imf input {

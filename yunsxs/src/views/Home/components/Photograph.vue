@@ -66,6 +66,7 @@
 </template>
 
 <script>
+import { addScore, getActionInfo, updateUserScore } from '../../util/api_post'
 export default {
   created() {
     this.getAllBlog()
@@ -120,12 +121,15 @@ export default {
       if (!postBlog.content.trim() && postBlog.pictures.length === 0) {
         return this.$message.error('内容不能为空')
       }
-      postBlog.userid = window.sessionStorage.getItem('userId')
+      const userid = window.sessionStorage.getItem('userId')
+      postBlog.userid = userid
       postBlog.time = new Date().toLocaleString()
       postBlog.pictures = postBlog.pictures.join(';')
       const { data: res } = await this.$http.post('blog/insert', postBlog)
+      addScore(userid, 2)
+      updateUserScore(userid, 3)
       if (res.code !== 200) return this.$message.error('发布失败')
-      this.$message.success('发布成功')
+      this.$message.success('发布成功，积分+3')
       this.blog = {
         userid: '',
         content: '',
@@ -134,6 +138,8 @@ export default {
       }
       this.$refs.upload.clearFiles()
       this.getAllBlog()
+      // 重新加载组件
+      this.$emit('update', userid)
     },
     showPics(picList) {
       return picList ? picList.map((v) => this.baseURL + v) : []
