@@ -47,7 +47,7 @@
                         <span>走进修水</span>
                     </a>
                 </li>
-                <li>
+                <li @click="jumpTo('/travel')">
                     <a href="#">
                         <i class="iconfont icon-lvyou1"></i>
                         <span>旅游度假</span>
@@ -65,7 +65,7 @@
                         <span>视频新闻</span>
                     </a>
                 </li>
-                <li>
+                <li @click="jumpTo('/user')">
                     <a href="#">
                         <i class="iconfont icon-gerenxinxi-copy"></i>
                         <span>个人信息</span>
