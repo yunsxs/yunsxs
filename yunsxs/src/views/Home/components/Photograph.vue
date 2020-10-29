@@ -2,131 +2,62 @@
   <el-container style="height: 100%">
     <el-main>
       <!-- 自己的发布区域 -->
-      <div class="user_edit" @blur="handleBlur">
+      <div class="user_edit">
         <el-input
           type="textarea"
           :rows="4"
           placeholder="说点什么吧"
-          v-model="textarea"
-          @focus="handleFocus"
+          v-model="blog.content"
         >
         </el-input>
         <el-upload
-          action="#"
-          :auto-upload="false"
+          class="pic_upload"
+          ref="upload"
+          :action="uploadUrl"
+          :on-success="handleSuccess"
+          :on-preview="handlePictureCardPreview"
+          :on-remove="handleRemove"
           list-type="picture-card"
-          :file-list="fileLists"
+          :multiple="true"
+          :limit="9"
         >
           <i class="el-icon-plus"></i>
+          <div slot="tip" class="el-upload__tip">最多只能上传9张图片</div>
         </el-upload>
-        <el-dialog
-          :visible.sync="imgDialogVisible"
-          size="full"
-          :modal="false"
-          title="查看大图片"
-        >
-          <img width="100%" alt="" />
+        <el-dialog :visible.sync="dialogVisible">
+          <img width="100%" :src="dialogImageUrl" alt="" />
         </el-dialog>
+        <!-- 上传按钮 -->
+        <el-button type="primary" @click="handleSubmit">点击发布</el-button>
       </div>
-      <div class="text_container">
+      <div class="text_container" v-for="one in allBlog" :key="one.blogid">
         <!-- 头像区域 -->
         <div class="block text_info">
           <el-avatar :size="50" :src="circleUrl"></el-avatar>
           <div class="text_direction">
-            <div class="user_name">hashihui</div>
-            <div class="time">2020</div>
+            <div class="user_name">{{ one.user.username }}</div>
+            <div class="time">{{ one.time }}</div>
           </div>
         </div>
         <div class="block text-detail">
           <!-- 内容 -->
           <div class="text">
-            一、政策出台背景
-            根据《中共江西省委、江西省人民政府关于深入实施创新驱动发展战略推进创新型省份建设的意见》（赣发〔2016〕5号）和《九江市加大全社会研发投入攻坚行动方案》文件精神，为着力支持发展我县首位产业和重点产业，鼓励企业加大研发投入和创新转型升级，促进我县产业发展和经济稳定增长。
-            二、目标任务
-            培植我县首位产业（机械制造）和重点产业（绿色食品）的壮大与发展，加快传统产业转型升级，大力实施创新驱动发展战略，引导并激励企业不断加大研发投入，促进我县社会研发投入持续增长和科技创新驱动能力不断提升。
-            三、主要内容
-            县委、县政府每年安排5000万元财政专项资金，主要支持机械制造和绿色食品产业中重点企业的技术研发、科技创新、人才引进和科技成果转化，基金采取以奖代补的方式。
-            四、涉及范围
-            主要针对落户我县的机械制造产业企业（首位产业）和绿色食品产业企业（重点产业）。
-            五、执行标准
-            一是对企业在项目技术改造、技术创新、研究开发等过程中的相关支出进行支持，支持金额不超过项目研发支出的10%，支持额度不超过200万元。
-            二是企业当年产品获得国家发明专利一项的，给予最高支持不超过20万元奖励；获得实用新型专利的给予一项最高支持不超过1万元奖励，获得外观设计专利的给予一项的最高支持不超过0.1万元奖励。
-            三是企业建立院士工作站的支持50万元，建立博士后科研工作站、博士后科研流动站、博士后创新实践基地的支持20万元。
-            四是企业每引进一名高科技人才，给予相应奖励。引进院士的，一次性奖励5万元；引进一名博士学位以上或具有专业高级职称以上人才且工作时间一年以上的，一次性奖励3万元；引进一名硕士学位或具有专业中级职称以上人才且工作时间一年以上的，一次性奖励1万元。
+            {{ one.content }}
           </div>
           <div class="photos">
             <el-image
-              style="width: 32%; height: 32%"
-              src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
-              fit="fill"
-              :preview-src-list="[
-                'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
-              ]"
-            ></el-image>
-            <el-image
-              style="width: 32%; height: 32%"
-              src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
-              fit="fill"
-              :preview-src-list="[
-                'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
-              ]"
-            ></el-image>
-            <el-image
-              style="width: 32%; height: 32%"
-              src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
-              fit="fill"
-              :preview-src-list="[
-                'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
-              ]"
-            ></el-image>
-            <el-image
-              style="width: 32%; height: 32%"
-              src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
-              fit="fill"
-              :preview-src-list="[
-                'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
-              ]"
-            ></el-image>
-            <el-image
-              style="width: 32%; height: 32%"
-              src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
-              fit="fill"
-              :preview-src-list="[
-                'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
-              ]"
-            ></el-image>
-            <el-image
-              style="width: 32%; height: 32%"
-              src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
-              fit="fill"
-              :preview-src-list="[
-                'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
-              ]"
-            ></el-image>
-            <el-image
-              style="width: 32%; height: 32%"
-              src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
-              fit="fill"
-              :preview-src-list="[
-                'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
-              ]"
-            ></el-image>
-            <el-image
-              style="width: 32%; height: 32%"
-              src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
-              fit="fill"
-              :preview-src-list="[
-                'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
-              ]"
-            ></el-image>
-            <el-image
-              style="width: 32%; height: 32%"
-              src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
-              fit="fill"
-              :preview-src-list="[
-                'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg',
-              ]"
-            ></el-image>
+              v-for="pic in one.pictures"
+              :key="pic"
+              style="width: 32.5%; height: 195px; margin-right: 5px"
+              :src="baseURL + pic"
+              :preview-src-list="showPics(one.pictures)"
+              fit="cover"
+              lazy
+            >
+              <div slot="error" class="image-slot">
+                <i class="el-icon-picture-outline"></i>
+              </div>
+            </el-image>
           </div>
         </div>
       </div>
@@ -136,26 +67,79 @@
 
 <script>
 export default {
+  created() {
+    this.getAllBlog()
+  },
   data() {
     return {
       circleUrl:
-        "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png",
-      topHeight: 0,
-      textarea: "",
-      fileLists: [],
+        'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
       imgDialogVisible: false,
-    };
+      // 图片上传到路径
+      uploadUrl: 'http://localhost:8081/yunsxs_api/api/upload',
+      baseURL: 'http://localhost:8081/yunsxs_api/',
+      dialogVisible: false,
+      dialogImageUrl: '',
+      blog: {
+        userid: '',
+        content: '',
+        pictures: [],
+        time: ''
+      },
+      // 所有的随手拍内容
+      allBlog: {}
+    }
   },
   methods: {
-    handleFocus() {
-      this.topHeight = 40;
-      console.log(this.fileLists);
+    handleSuccess(res, file) {
+      if (res.code !== 200)
+        return this.$message.error('上传图片失败，请重新上传')
+      this.blog.pictures.push(res.data.path)
     },
-    handleBlur() {
-      this.topHeight = 0;
+    handlePictureCardPreview(file) {
+      this.dialogVisible = true
+      this.dialogImageUrl = file.url
     },
-  },
-};
+    // 处理图片删除效果
+    handleRemove(file) {
+      const filePath = file.response.data.path
+      const index = this.blog.pictures.indexOf(filePath)
+      if (index >= 0) {
+        this.blog.pictures.splice(index, 1)
+      }
+    },
+    async getAllBlog() {
+      const { data: res } = await this.$http.get('blog/getAllBlog')
+      this.allBlog = res.data
+      this.allBlog.forEach((v) => {
+        v.pictures = v.pictures ? v.pictures.split(';') : []
+      })
+    },
+    async handleSubmit() {
+      let postBlog = JSON.parse(JSON.stringify(this.blog))
+      if (!postBlog.content.trim() && postBlog.pictures.length === 0) {
+        return this.$message.error('内容不能为空')
+      }
+      postBlog.userid = window.sessionStorage.getItem('userId')
+      postBlog.time = new Date().toLocaleString()
+      postBlog.pictures = postBlog.pictures.join(';')
+      const { data: res } = await this.$http.post('blog/insert', postBlog)
+      if (res.code !== 200) return this.$message.error('发布失败')
+      this.$message.success('发布成功')
+      this.blog = {
+        userid: '',
+        content: '',
+        pictures: [],
+        time: ''
+      }
+      this.$refs.upload.clearFiles()
+      this.getAllBlog()
+    },
+    showPics(picList) {
+      return picList ? picList.map((v) => this.baseURL + v) : []
+    }
+  }
+}
 </script>
 
 <style scoped>
@@ -163,40 +147,18 @@ export default {
   margin-bottom: 40px;
 }
 
-/* /deep/ .el-upload--picture-card {
-  width: 100px;
-  height: 100px;
-}
-/deep/ .el-upload {
-  width: 100px;
-  height: 100px;
-  line-height: 100px;
-}
-/deep/ .el-upload-list--picture-card .el-upload-list__item {
-  width: 100px;
-  height: 100px;
-  line-height: 100px;
-}
-/deep/ .el-upload-list--picture-card .el-upload-list__item-thumbnail {
-  width: 100px;
-  height: 100px;
-  line-height: 100px;
-}
-/deep/ .avatar {
-  width: 100px;
-  height: 100px;
-} */
-
 .user_edit_bottom {
   /* border: 1px solid #cccccc; */
   overflow: hidden;
   transition: all 0.5s;
 }
+
 .text_container {
   /* border-bottom: 1px solid black; */
   padding: 20px;
   box-shadow: 0 0 10px #ccc;
   margin-bottom: 30px;
+  transition: all 12s;
 }
 .text_info {
   margin-bottom: 20px;
@@ -226,6 +188,6 @@ export default {
 
 .text-detail .photos {
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 </style>

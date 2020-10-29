@@ -15,17 +15,32 @@
         class="register_form"
       >
         <el-form-item prop="username">
-          <el-input v-model="registerForm.username" prefix-icon="el-icon-user"></el-input>
+          <el-input
+            v-model.trim="registerForm.username"
+            prefix-icon="el-icon-user"
+          ></el-input>
         </el-form-item>
         <el-form-item prop="password">
-          <el-input prefix-icon="el-icon-lock" v-model="registerForm.password"></el-input>
+          <el-input
+            type="password"
+            prefix-icon="el-icon-lock"
+            v-model.trim="registerForm.password"
+          ></el-input>
         </el-form-item>
         <el-form-item prop="phoneNumber">
-          <el-input prefix-icon="el-icon-phone" v-model="registerForm.phoneNumber"></el-input>
+          <el-input
+            type="number"
+            prefix-icon="el-icon-phone"
+            v-model.trim="registerForm.phoneNumber"
+          ></el-input>
         </el-form-item>
         <el-form-item prop="check">
           <div class="check">
-            <div class="tiao" @mousedown="handledrag" :style="{left: dragLeft+'px'}">
+            <div
+              class="tiao"
+              @mousedown="handledrag"
+              :style="{ left: dragLeft + 'px' }"
+            >
               <div class="success">完成验证</div>
               <div class="drag">
                 <i class="el-icon-arrow-right"></i>
@@ -35,7 +50,9 @@
           </div>
         </el-form-item>
         <el-form-item class="btns">
-          <el-button type="primary" :disabled="btnDisable" @click="register">注册并登录</el-button>
+          <el-button type="primary" :disabled="btnDisable" @click="register"
+            >注册并登录</el-button
+          >
         </el-form-item>
       </el-form>
     </div>
@@ -44,23 +61,37 @@
 
 <script>
 export default {
+  created() {
+    document.onkeypress = (e) => {
+      var keycode = document.all ? event.keyCode : e.which
+      if (keycode == 13) {
+        this.register()
+        return false
+      }
+    }
+  },
   data() {
     return {
       registerForm: {
         username: '',
         password: '',
-        phoneNumber: ''
+        phoneNumber: '',
       },
       registerFormRules: {
         username: [
-          { required: true, message: '请输入用户名', trigger: 'blur' }
+          { required: true, message: '请输入用户名', trigger: 'blur' },
         ],
         password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
         phoneNumber: [
-          { required: true, message: '请输入电话号码', trigger: 'blur' }
-        ]
+          { required: true, message: '请输入电话号码', trigger: 'change' },
+          {
+            pattern: /^1(?:3\d|4[4-9]|5[0-35-9]|6[67]|7[013-8]|8\d|9\d)\d{8}$/,
+            message: '请输入正确的手机号格式',
+            trigger: 'blur',
+          },
+        ],
       },
-      dragLeft: -272
+      dragLeft: -272,
     }
   },
   methods: {
@@ -69,7 +100,7 @@ export default {
       let box = document.querySelector('.register_box')
       let disX = box.offsetLeft - parseInt(getComputedStyle(box).width) / 2
       let b = document.querySelector('.check').offsetLeft
-      document.onmousemove = function(e) {
+      document.onmousemove = function (e) {
         if (_this.dragLeft < 0) {
           _this.dragLeft = e.clientX - disX - 350
           if (_this.dragLeft < -272) {
@@ -80,7 +111,7 @@ export default {
           }
         }
       }
-      document.onmouseup = function() {
+      document.onmouseup = function () {
         document.onmousemove = null
         document.onmouseup = null
         if (_this.dragLeft < 0) {
@@ -89,14 +120,22 @@ export default {
       }
     },
     register() {
-      this.$refs.registerFormRef.validate(valid => {
+      this.$refs.registerFormRef.validate(async (valid) => {
         if (valid) {
           if (this.dragLeft !== 0) {
-            alert('请先完成验证')
+            return this.$message.error('请先完成验证')
           }
+          const { data: res } = await this.$http.post('register', {
+            ...this.registerForm,
+            phonenumber: this.phoneNumber,
+          })
+          if (res.code !== 200) return this.$message.error(res.message)
+          this.$message.success('注册成功')
+          window.sessionStorage.setItem('userId', res.data.userid)
+          this.$router.push('/home')
         }
       })
-    }
+    },
   },
   computed: {
     btnDisable() {
@@ -104,8 +143,8 @@ export default {
         return false
       }
       return true
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -125,7 +164,7 @@ export default {
   margin-top: 0px;
 }
 
-.logo .title {
+.register_content .logo .title {
   /* line-height: 130px; */
   font-size: 40px;
   text-shadow: 5px 5px 7px #696565, 0px 0px 2px black;
@@ -134,7 +173,7 @@ export default {
   /* font-style: italic; */
 }
 
-.logo img {
+.register_content .logo img {
   width: 80px;
   vertical-align: middle;
 }

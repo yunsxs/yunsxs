@@ -6,13 +6,13 @@
 
 <script>
 export default {
-  name: "App",
-};
+  name: 'App',
+}
 </script>
 
 <style>
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0px;
@@ -22,6 +22,21 @@ export default {
 * {
   padding: 0;
   margin: 0;
+}
+.news_content .news_detail img {
+  width: 100%;
+}
+
+.news_content .el-submenu__title {
+  padding: 0 !important;
+}
+
+.news_detail .ql-align-right {
+  text-align: right;
+}
+
+.news_detail .ql-align-center {
+  text-align: center;
 }
 
 .login_content .el-input__inner {
@@ -40,5 +55,4 @@ export default {
   /* font-weight: 700; */
   font-size: 13px;
 }
-
 </style>

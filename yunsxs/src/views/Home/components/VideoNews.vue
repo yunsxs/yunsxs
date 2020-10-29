@@ -1,57 +1,38 @@
 <template>
   <!-- 视频新闻 -->
-  <el-container style="height: 100%">
-    <el-aside width="250px">
-      <el-menu>
-        <el-submenu v-for="news in newsType" :key="news" :index="news">
+  <el-container style="height: 100%" class="news_content">
+    <el-aside width="260px">
+      <el-menu :default-active="defaultId">
+        <el-submenu
+          v-for="news in newsType"
+          :key="news.typeId"
+          :index="news.typeId.toString()"
+        >
           <template slot="title">
-            <i class="el-icon-menu"></i>
-            <span>{{ news }}</span>
+            <i :class="iconObj[news.typeId]"></i>
+            <span>{{ news.typeName }}</span>
           </template>
-          <el-menu-item-group>
-            <template slot="title">分组一</template>
-            <el-menu-item index="1-1">选项1</el-menu-item>
-            <el-menu-item index="1-2">选项2</el-menu-item>
-          </el-menu-item-group>
+
+          <el-menu-item
+            @click="change(oneNews)"
+            v-for="oneNews in news.children"
+            :key="oneNews.news_id"
+            :index="oneNews.news_id.toString()"
+            >{{ oneNews.news_title }}</el-menu-item
+          >
         </el-submenu>
       </el-menu>
     </el-aside>
     <el-main>
       <div class="news_container">
-        <h2>2020年10月9日视频新闻</h2>
+        <h2>{{ news.news_title }}</h2>
         <div class="news_direction">
           <span>来源:修水报</span>
-          <span>作者:朱修林</span>
-          <span>发布时间：2020-07-27</span>
+          <span>作者:{{ news.up }}</span>
+          <span>发布时间：{{ news.reg_time }}</span>
         </div>
-        <div class="news_detail">
-          一、政策出台背景
-          根据《中共江西省委、江西省人民政府关于深入实施创新驱动发展战略推进创新型省份建设的意见》（赣发〔2016〕5号）和《九江市加大全社会研发投入攻坚行动方案》文件精神，为着力支持发展我县首位产业和重点产业，鼓励企业加大研发投入和创新转型升级，促进我县产业发展和经济稳定增长。
-          二、目标任务
-          培植我县首位产业（机械制造）和重点产业（绿色食品）的壮大与发展，加快传统产业转型升级，大力实施创新驱动发展战略，引导并激励企业不断加大研发投入，促进我县社会研发投入持续增长和科技创新驱动能力不断提升。
-          三、主要内容
-          县委、县政府每年安排5000万元财政专项资金，主要支持机械制造和绿色食品产业中重点企业的技术研发、科技创新、人才引进和科技成果转化，基金采取以奖代补的方式。
-          四、涉及范围
-          主要针对落户我县的机械制造产业企业（首位产业）和绿色食品产业企业（重点产业）。
-          五、执行标准
-          一是对企业在项目技术改造、技术创新、研究开发等过程中的相关支出进行支持，支持金额不超过项目研发支出的10%，支持额度不超过200万元。
-          二是企业当年产品获得国家发明专利一项的，给予最高支持不超过20万元奖励；获得实用新型专利的给予一项最高支持不超过1万元奖励，获得外观设计专利的给予一项的最高支持不超过0.1万元奖励。
-          三是企业建立院士工作站的支持50万元，建立博士后科研工作站、博士后科研流动站、博士后创新实践基地的支持20万元。
-          四是企业每引进一名高科技人才，给予相应奖励。引进院士的，一次性奖励5万元；引进一名博士学位以上或具有专业高级职称以上人才且工作时间一年以上的，一次性奖励3万元；引进一名硕士学位或具有专业中级职称以上人才且工作时间一年以上的，一次性奖励1万元。
-          一、政策出台背景
-          根据《中共江西省委、江西省人民政府关于深入实施创新驱动发展战略推进创新型省份建设的意见》（赣发〔2016〕5号）和《九江市加大全社会研发投入攻坚行动方案》文件精神，为着力支持发展我县首位产业和重点产业，鼓励企业加大研发投入和创新转型升级，促进我县产业发展和经济稳定增长。
-          二、目标任务
-          培植我县首位产业（机械制造）和重点产业（绿色食品）的壮大与发展，加快传统产业转型升级，大力实施创新驱动发展战略，引导并激励企业不断加大研发投入，促进我县社会研发投入持续增长和科技创新驱动能力不断提升。
-          三、主要内容
-          县委、县政府每年安排5000万元财政专项资金，主要支持机械制造和绿色食品产业中重点企业的技术研发、科技创新、人才引进和科技成果转化，基金采取以奖代补的方式。
-          四、涉及范围
-          主要针对落户我县的机械制造产业企业（首位产业）和绿色食品产业企业（重点产业）。
-          五、执行标准
-          一是对企业在项目技术改造、技术创新、研究开发等过程中的相关支出进行支持，支持金额不超过项目研发支出的10%，支持额度不超过200万元。
-          二是企业当年产品获得国家发明专利一项的，给予最高支持不超过20万元奖励；获得实用新型专利的给予一项最高支持不超过1万元奖励，获得外观设计专利的给予一项的最高支持不超过0.1万元奖励。
-          三是企业建立院士工作站的支持50万元，建立博士后科研工作站、博士后科研流动站、博士后创新实践基地的支持20万元。
-          四是企业每引进一名高科技人才，给予相应奖励。引进院士的，一次性奖励5万元；引进一名博士学位以上或具有专业高级职称以上人才且工作时间一年以上的，一次性奖励3万元；引进一名硕士学位或具有专业中级职称以上人才且工作时间一年以上的，一次性奖励1万元。
-        </div>
+        <div class="news_detail" v-html="news.substance"></div>
+        <div style="height:100px;"></div>
       </div>
     </el-main>
   </el-container>
@@ -59,12 +40,36 @@
 
 <script>
 export default {
+  created() {
+    // 获取新闻列表
+    this.getAllNewsList()
+  },
   data() {
     return {
-      newsType: ["娱乐", "时政", "农业", "视频新闻"],
-    };
+      newsType: [],
+      news: {},
+      defaultId: '',
+      iconObj: {
+        1: 'el-icon-s-comment',
+        2: 'el-icon-notebook-1',
+        3: 'el-icon-tableware',
+        4: 'el-icon-film',
+      },
+    }
   },
-};
+  methods: {
+    async getAllNewsList() {
+      const { data: res } = await this.$http.get('news/getAllNews')
+      if (res.code !== 200) return this.$message.error('获取新闻列表失败')
+      this.news = res.data[0].children[0]
+      this.defaultId = res.data[0].children[0].news_id.toString()
+      this.newsType = res.data
+    },
+    change(news) {
+      this.news = news
+    },
+  },
+}
 </script>
 
 <style scoped>
@@ -83,5 +88,18 @@ export default {
 .news_direction span {
   display: inline-block;
   margin-right: 10px;
+}
+
+.news_detail {
+  font-size: 15px;
+  line-height: 30px;
+}
+
+.el-menu-item {
+  width: 100%;
+  text-align: left;
+  padding: 0 !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 </style>

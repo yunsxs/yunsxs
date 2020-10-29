@@ -1,9 +1,14 @@
 <template>
   <div class="login_content">
-    <div class="bg" :class="{bg_blur: isBlur}" id="bg"></div>
+    <div class="bg" :class="{ bg_blur: isBlur }" id="bg"></div>
     <div class="login-box">
       <div class="login_title"></div>
-      <el-form ref="loginFormRef" :model="loginForm" :rules="loginFormRule" class="login-msg">
+      <el-form
+        ref="loginFormRef"
+        :model="loginForm"
+        :rules="loginFormRule"
+        class="login-msg"
+      >
         <el-form-item prop="username">
           <el-input
             type="text"
@@ -23,7 +28,7 @@
           >
             <i
               class="iconfont el-input__icon pwd_icon"
-              :class="[isActive?'icon-Notvisible':'icon-browse']"
+              :class="[isActive ? 'icon-Notvisible' : 'icon-browse']"
               slot="suffix"
               @click="handleIconClick"
             ></i>
@@ -44,21 +49,31 @@
 
 <script>
 export default {
+  created() {
+    let that = this
+    document.onkeypress = function (e) {
+      var keycode = document.all ? event.keyCode : e.which
+      if (keycode == 13) {
+        that.handleLogin() // 登录方法名
+        return false
+      }
+    }
+  },
   data() {
     return {
       isBlur: false,
       loginForm: {
         username: '',
-        password: ''
+        password: '',
       },
       type: 'password',
       loginFormRule: {
         username: [
-          { required: true, message: '请输入用户名', trigger: 'blur' }
+          { required: true, message: '请输入用户名', trigger: 'blur' },
         ],
-        password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
+        password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
       },
-      isActive: true
+      isActive: true,
     }
   },
   methods: {
@@ -76,13 +91,17 @@ export default {
       this.$router.push('/register')
     },
     handleLogin() {
-      this.$refs.loginFormRef.validate(valid => {
-        if(valid){
-          this.$router.push('/home')
-        }
+      this.$refs.loginFormRef.validate(async (valid) => {
+        if (!valid) return
+        const { data: res } = await this.$http.post('login', this.loginForm)
+        if (res.code !== 200) return this.$message.error('用户名或者密码错误')
+        this.$message.success('登录成功')
+        // 存储user信息
+        window.sessionStorage.setItem('userId', res.data.userid)
+        this.$router.push('/home')
       })
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -114,7 +133,6 @@ export default {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
   /* background-color: rgba(91, 184, 228, 0.7); */
   background-color: rgba(0, 0, 0, 0.5);
-
 }
 
 .login-msg {
@@ -127,7 +145,7 @@ export default {
 .pwd_icon {
   cursor: pointer;
   font-size: 24px;
-  color: #fff;
+  color: #ccc;
 }
 
 .btns {

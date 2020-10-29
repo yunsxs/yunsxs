@@ -18,7 +18,7 @@
                             <span>等级查询</span>
                         </a>
                     </li>
-                    <li>
+                    <li @click.prevent="logOut">
                         <a href="#">
                             <i class="iconfont icon-tuichudenglu"></i>
                             <span>登出</span>
@@ -126,6 +126,11 @@ export default {
     mounted(){
        document.addEventListener("scroll",this.scrollMeth)
     },
+    created() {
+        if(!window.sessionStorage.getItem('userId')){
+        this.$router.push('/login')
+        }
+    },
     methods:{
         jumpTo(to){
             this.$router.push(to)
@@ -137,10 +142,13 @@ export default {
             if(document.documentElement.scrollTop<20){
                 this.topBg=false
             }
-        }
+        },
+        logOut() {
+            window.sessionStorage.clear()
+            this.$router.push('/login')
+        },
     }
-  }
-
+}
 </script>
 <style scoped>
 .nav ul li:hover span {

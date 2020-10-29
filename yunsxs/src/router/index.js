@@ -10,7 +10,7 @@ export default new Router({
       redirect: "/login"
     },
     {
-      path: '',
+      path: '/home',
       redirect: "/government",
       name: 'Home',
       meta: {
