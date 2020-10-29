@@ -155,7 +155,8 @@ export default {
   background-size: contain;
   background-position: center;
   position: relative;
-  background-image: url("./images/bg06.png");
+  background-image: url("./images/bg06.jpeg");
+  background-size: cover;
 }
 
 .register_content .logo {
