@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6baa039a-e01a-4baf-b98e-3457aa126c6a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,19 +75,19 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\27325\IdeaProjects\yunsxs\yunsxs_api\src\main\resources\mapper" />
+      <recent name="C:\Users\27325\IdeaProjects\yunsxs\yunsxs_api\src\main\resources" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\27325\IdeaProjects\yunsxs\yunsxs_api\src\main\webapp" />
       <recent name="C:\Users\27325\IdeaProjects\yunsxs\yunsxs_api\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\27325\IdeaProjects\yunsxs\yunsxs_api" />
       <recent name="C:\Users\27325\IdeaProjects\yunsxs\yunsxs_api\src" />
       <recent name="C:\Users\27325\IdeaProjects\yunsxs\yunsxs_api\src\main\resources\mapper" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\27325\IdeaProjects\yunsxs\yunsxs_api\src\main\resources\mapper" />
-      <recent name="C:\Users\27325\IdeaProjects\yunsxs\yunsxs_api\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -415,18 +414,18 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1237" height="327" key="GridCell.Tab.4.right/0.0.1280.680@0.0.1280.680" timestamp="1603779281273" />
-    <state x="104" y="0" key="SettingsEditor" timestamp="1603953898734">
+    <state x="104" y="0" key="SettingsEditor" timestamp="1603957211000">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="104" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1603953898734" />
+    <state x="104" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1603957211000" />
     <state x="439" y="118" key="chooseDestDirectoryDialog" timestamp="1603777859278">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="439" y="118" key="chooseDestDirectoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1603777859278" />
-    <state x="325" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1603953925475">
+    <state x="325" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1603957162534">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="325" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1603953925475" />
+    <state x="325" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1603957162534" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1603905682792">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
