@@ -1,62 +1,3 @@
-<<<<<<< HEAD
-*{
-    margin: 0px;
-    padding: 0px;
-}
-.home{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-    background: url('../imgs/bg1.jpg');
-    background-size: cover;
-    overflow: hidden;
-}
-.topbg1{transition: 0.5s; background-color: white;}
-.topNav{
-   width: 100%;
-   height: 60px;
-   position: fixed;
-   top: 0px;
-   text-align: center;
-   z-index: 999;
-   transition: 0.5s;
-}
-.nav_list{
-    float: right; 
-    position: absolute;
-    height: auto;
-    overflow: hidden;
-    top: 50%;
-    right: 100px;
-    transform: translateY(-50%);
-}
-.nav ul{
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
-}
-.nav_list ul li{
-    float: left;
-    width: 150px;
-    border-right: 1px solid black;
-}
-.nav_list ul li:last-child{border: none;}
-.nav_list ul li a,.list_a{
-    text-decoration: none;
-    color: #409EFF;
-    font-size: 18px;
-}
-.nav_list ul li a i{
-    font-size: 20px;
-}
-.home_block{
-    width: 80%;
-    height: auto;
-    margin: 0px auto;
-}
-.logo{margin-top: 60px;}
-=======
 * {
   margin: 0px;
   padding: 0px;
@@ -133,7 +74,6 @@
   margin-top: 60px;
 }
 
->>>>>>> 9caed3015076ab390f1014f7c13e5899475b206b
 /*  */
 .secondNav ul {
   display: flex;
