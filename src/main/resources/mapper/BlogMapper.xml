@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 连接到的接口 -->
+<mapper namespace="com.dao.BlogMapper">
+
+    <!-- <insert id="addBlog" parameterType="com.wlh.entity.Blog"> </insert> -->
+    <resultMap type="Blog" id="blogResultMap">
+        <!-- 将数据库字段与实体类属性相对应 -->
+        <!-- 主键的设置 column:数据库表字段名 property：实体类的属性名称 -->
+        <id column="blogid" property="blogid"/>
+        <!-- 其余字段 -->
+        <result column="content" property="content"/>
+        <result column="pictures" property="pictures"/>
+        <result column="time" property="time"/>
+        <result column="userid" property="userid"/>
+
+        <association property="user" column="userid" javaType="User">
+            <id column="userid" property="userid"/>
+            <!-- 其余字段 -->
+            <result column="username" property="username"/>
+            <result column="userrname" property="userrname"/>
+            <result column="password" property="password"/>
+            <result column="userlevel" property="userlevel"/>
+            <result column="userscore" property="userscore"/>
+            <result column="phonenumber" property="phonenumber"></result>
+        </association>
+    </resultMap>
+
+    <!-- 查询 -->
+    <select id="getAllBlog" resultMap="blogResultMap">
+		SELECT * FROM blog, user WHERE blog.userid = user.userid ORDER BY blogid DESC
+	</select>
+
+<!--    插入-->
+    <insert id="insertBlog" parameterType="Blog" useGeneratedKeys="true" keyProperty="blogid">
+        insert into blog
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userid != 0">
+                userid,
+            </if>
+            <if test="content != null">
+                content,
+            </if>
+            <if test="pictures != null">
+                pictures,
+            </if>
+            <if test="time != null">
+                time,
+            </if>
+        </trim>
+        <trim prefix="value (" suffix=")" suffixOverrides=",">
+            <if test="userid != 0">
+                #{userid,jdbcType=INTEGER},
+            </if>
+            <if test="content != null">
+                #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="pictures != null">
+                #{pictures,jdbcType=VARCHAR},
+            </if>
+            <if test="time != null">
+                #{time,jdbcType=VARCHAR},
+            </if>
+        </trim>
+
+    </insert>
+
+</mapper>

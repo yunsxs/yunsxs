@@ -1,7 +1,10 @@
+import com.dao.BlogMapper;
 import com.dao.UserMapper;
+import com.entity.Blog;
 import com.entity.News;
 import com.entity.NewsType;
 import com.entity.User;
+import com.service.BlogService;
 import com.service.NewsService;
 import com.service.NewsTypeService;
 import com.service.UserService;
@@ -37,6 +40,16 @@ public class ServiceTest {
         List<NewsType> newsTypeList = newsTypeService.getAllNewsType();
         for(NewsType newsType : newsTypeList){
             System.out.println(newsType.toString());
+        }
+    }
+
+    @Test
+    public void testGetAllBlog(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
+        BlogService blogService = context.getBean("BlogService", BlogService.class);
+        List<Blog> blogList = blogService.getAllBlog();
+        for(Blog blog : blogList){
+            System.out.println(blog.toString());
         }
     }
 }
