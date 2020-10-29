@@ -1,11 +1,5 @@
-import com.dao.BlogMapper;
-import com.dao.NewsMapper;
-import com.dao.NewsTypeMapper;
-import com.dao.UserMapper;
-import com.entity.Blog;
-import com.entity.News;
-import com.entity.NewsType;
-import com.entity.User;
+import com.dao.*;
+import com.entity.*;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -103,4 +97,32 @@ public class DaoTest {
         System.out.println(flag);
     }
 
+    @Test
+    public void testGetActionByUserId(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
+        ActionMapper actionMapper = context.getBean(ActionMapper.class);
+        List<Action> actionList = actionMapper.getActionByUserId(1);
+        for (Action action : actionList) {
+            System.out.println(action.toString());
+        }
+    }
+
+    @Test
+    public void testInsertAction(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
+        ActionMapper actionMapper = context.getBean(ActionMapper.class);
+        Action action = new Action();
+        action.setRule_id(2);
+        action.setUserid(1);
+        int flag = actionMapper.insertAction(action);
+        System.out.println(flag);
+    }
+
+    @Test
+    public void testUpdateScore(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
+        UserMapper userMapper = context.getBean(UserMapper.class);
+        int flag = userMapper.updateUserScore(1, 3);
+        System.out.println(flag);
+    }
 }

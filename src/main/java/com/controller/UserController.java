@@ -55,4 +55,17 @@ public class UserController {
         }
         return result;
     }
+
+    @RequestMapping(value = "/updateScore", method = RequestMethod.GET)
+    @ResponseBody
+    public Result updateUserScore(@RequestParam("userId")int userId, @RequestParam("score")int score) {
+        Result result = null;
+        Boolean flag = userService.updateUserScore(userId, score);
+        if(flag){
+            result = new Result(ResultStatus.SUCCESS);
+        }else {
+            result = new Result(ResultStatus.ERROR);
+        }
+        return result;
+    }
 }

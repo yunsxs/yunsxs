@@ -8,4 +8,5 @@ public interface UserService {
     Boolean isPhoneExist(String phoneNumber);
     Boolean updateUserById(User user);
     User getUserById(int userId);
+    Boolean updateUserScore(int userId, int score);
 }

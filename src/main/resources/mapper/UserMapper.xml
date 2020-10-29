@@ -84,4 +84,8 @@
         select  * from user where userid=#{userId}
     </select>
 
+<!--    修改积分-->
+    <update id="updateUserScore">
+        UPDATE user set userscore = userscore + #{param2} where userid = #{param1}
+    </update>
 </mapper>

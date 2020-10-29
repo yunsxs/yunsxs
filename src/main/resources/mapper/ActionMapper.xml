@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- 连接到的接口 -->
+<mapper namespace="com.dao.ActionMapper">
+
+    <!-- <insert id="addBlog" parameterType="com.wlh.entity.Blog"> </insert> -->
+    <resultMap type="Action" id="actionResultMap">
+        <!-- 将数据库字段与实体类属性相对应 -->
+        <!-- 主键的设置 column:数据库表字段名 property：实体类的属性名称 -->
+        <id column="action_id" property="action_id"/>
+        <!-- 其余字段 -->
+        <association property="user" column="user_id" javaType="User">
+            <id column="userid" property="userid"/>
+            <result column="username" property="username"/>
+            <result column="userrname" property="userrname"/>
+            <result column="password" property="password"/>
+            <result column="userlevel" property="userlevel"/>
+            <result column="userscore" property="userscore"/>
+            <result column="phonenumber" property="phonenumber"></result>
+        </association>
+        <association property="rule" column="rule_id" javaType="Rule">
+            <id column="rule_id" property="rule_id"></id>
+            <result column="rule_msg" property="rule_msg"></result>
+            <result column="rule_plus" property="rule_plus"></result>
+        </association>
+    </resultMap>
+
+    <!-- 查询 -->
+    <select id="getActionByUserId" resultMap="actionResultMap" parameterType="int">
+		SELECT * FROM action, rule, `user`
+        WHERE rule.rule_id = action.rule_id AND action.userid = `user`.userid AND `user`.userid = 1
+        ORDER BY action.action_id DESC
+        LIMIT 0,10
+	</select>
+
+<!--    插入-->
+    <insert id="insertAction" parameterType="Action" useGeneratedKeys="true" keyProperty="action_id">
+        insert into action
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="rule_id != null">
+                rule_id,
+            </if>
+            <if test="userid != null">
+                userid,
+            </if>
+        </trim>
+        <trim prefix="value (" suffix=")" suffixOverrides=",">
+            <if test="rule_id != null">
+                #{rule_id,jdbcType=INTEGER},
+            </if>
+            <if test="userid != null">
+                #{userid,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+
+</mapper>

@@ -43,4 +43,9 @@ public class UserServiceImpl implements UserService {
     public User getUserById(int userId) {
         return userMapper.selectUserById(userId);
     }
+
+    @Override
+    public Boolean updateUserScore(int userId, int score) {
+        return userMapper.updateUserScore(userId, score) > 0 ? true : false;
+    }
 }
