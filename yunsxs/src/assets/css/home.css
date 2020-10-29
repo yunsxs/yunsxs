@@ -373,3 +373,21 @@
   width: 100px;
   height: 100px;
 }
+
+
+.el-progress-bar{
+  border-radius: 5px;
+  width: 350px;
+}
+
+.el-progress-bar__outer{
+  border-radius: 5px;
+  /* background-color: #cccccc; */
+}
+.el-progress-bar__inner{
+  border-radius: 2px;
+}
+
+.el-progress__text{
+  display: none;
+}

@@ -32,7 +32,7 @@
           <span>发布时间：{{ news.reg_time }}</span>
         </div>
         <div class="news_detail" v-html="news.substance"></div>
-        <div style="height:100px;"></div>
+        <div style="height:200px;"></div>
       </div>
     </el-main>
   </el-container>

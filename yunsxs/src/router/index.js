@@ -39,11 +39,6 @@ export default new Router({
           component: resolve => require(['@/views/Home/components/VideoNews'], resolve)
         },
         {
-          path: '/videoNews2',
-          name: 'videoNews2',
-          component: resolve => require(['@/views/Home/components/VideoNews2'], resolve)
-        },
-        {
           path: '/user',
           name: 'user',
           component: resolve => require(['@/views/Home/components/User'], resolve)
