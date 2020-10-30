@@ -88,15 +88,18 @@ export default {
         time: ''
       },
       // 所有的随手拍内容
-      allBlog: {}
+      allBlog: {},
+      userInfo: {}
     }
   },
   methods: {
+    // 图片上传成功
     handleSuccess(res, file) {
       if (res.code !== 200)
         return this.$message.error('上传图片失败，请重新上传')
       this.blog.pictures.push(res.data.path)
     },
+    // 处理图片预览
     handlePictureCardPreview(file) {
       this.dialogVisible = true
       this.dialogImageUrl = file.url
@@ -109,13 +112,16 @@ export default {
         this.blog.pictures.splice(index, 1)
       }
     },
+    // 获取所有的随手拍内容
     async getAllBlog() {
       const { data: res } = await this.$http.get('blog/getAllBlog')
       this.allBlog = res.data
+      this.userInfo = res.data[0].user
       this.allBlog.forEach((v) => {
         v.pictures = v.pictures ? v.pictures.split(';') : []
       })
     },
+    // 提交编辑的内容
     async handleSubmit() {
       let postBlog = JSON.parse(JSON.stringify(this.blog))
       if (!postBlog.content.trim() && postBlog.pictures.length === 0) {
@@ -126,8 +132,12 @@ export default {
       postBlog.time = new Date().toLocaleString()
       postBlog.pictures = postBlog.pictures.join(';')
       const { data: res } = await this.$http.post('blog/insert', postBlog)
+      // 向action表添加数据
       addScore(userid, 2)
-      updateUserScore(userid, 3)
+      // 更新user表中的score
+      const userLevel = this.userInfo.userlevel
+      const userScore = this.userInfo.userscore
+      updateUserScore(userid, userLevel, userScore, 3)
       if (res.code !== 200) return this.$message.error('发布失败')
       this.$message.success('发布成功，积分+3')
       this.blog = {

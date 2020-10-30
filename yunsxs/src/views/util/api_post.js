@@ -26,11 +26,28 @@ export function getActionInfo(userId) {
 }
 
 // 更改user表中的score
-export async function updateUserScore(userId, score) {
+export async function updateUserScore(userId, userLevel, userScore, score) {
+    userScore += score
+    console.log(userLevel, userScore)
+    switch (userLevel) {
+        case 1:
+            userScore > 300 ? userLevel++ : userLevel
+            break
+        case 2:
+            userScore > 800 ? userLevel++ : userLevel
+            break
+        case 3:
+            userScore > 1500 ? userLevel++ : userLevel
+            break
+        case 4:
+            userScore > 2500 ? userLevel++ : userLevel
+            break
+    }
     const { data: res } = await axios('user/updateScore', {
         params: {
             userId,
-            score
+            score,
+            userLevel
         }
     })
     return res

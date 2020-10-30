@@ -4,7 +4,7 @@
       <div slot="content">
         <div class="score_title">
           <span>积分：{{ score }}</span>
-          <el-tooltip class="item" effect="dark" placement="right-start">
+          <el-tooltip class="item" effect="dark" placement="right-start" :enterable="false">
             <i class="el-icon-s-opportunity"></i>
             <div slot="content">
               <p>1.每日签到获得2积分</p>
@@ -115,5 +115,11 @@ export default {
   text-align: right;
   font-size: 13px;
   color: rgba(0, 0, 0, 0.7);
+}
+
+.list_a {
+  color: #409eff;
+  cursor: pointer;
+  font-size: 18px;
 }
 </style>
