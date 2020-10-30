@@ -14,8 +14,9 @@
           </li>
           <li>
             <a href="#">
-              <i class="el-icon-medal"></i>
-              <span>等级查询</span>
+              <!-- <i class="el-icon-medal"></i>
+              <span>等级查询</span> -->
+              <level></level>
             </a>
           </li>
           <li @click.prevent="logOut">
@@ -116,9 +117,10 @@
 </template>
 <script>
 import score from './components/Score'
+import level from './components/Level'
 import { getActionInfo } from '../util/api_post'
 export default {
-  components: { score },
+  components: { score, level },
   data() {
     return {
       topBg: false, //导航栏class控制
@@ -130,7 +132,7 @@ export default {
         { name: '签到', score: 2 },
         { name: '发布随手拍', score: 3 }
       ],
-      userScore: 0,
+      userScore: 0
     }
   },
   mounted() {
