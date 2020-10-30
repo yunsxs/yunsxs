@@ -7,20 +7,21 @@
             <score :score="userScore" :list="scoreList"></score>
           </li>
           <li>
-            <a href="#">
-              <i class="el-icon-s-claim"></i>
-              <span>签到查询</span>
+            <a>
+              <!-- <i class="el-icon-s-claim"></i>
+              <span>签到查询</span> -->
+              <checkIn></checkIn>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a>
               <!-- <i class="el-icon-medal"></i>
               <span>等级查询</span> -->
               <level></level>
             </a>
           </li>
           <li @click.prevent="logOut">
-            <a href="#">
+            <a>
               <i class="iconfont icon-tuichudenglu"></i>
               <span>登出</span>
             </a>
@@ -118,9 +119,10 @@
 <script>
 import score from './components/Score'
 import level from './components/Level'
+import checkIn from './components/CheckIn'
 import { getActionInfo } from '../util/api_post'
 export default {
-  components: { score, level },
+  components: { score, level, checkIn },
   data() {
     return {
       topBg: false, //导航栏class控制

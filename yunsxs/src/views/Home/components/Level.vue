@@ -1,6 +1,6 @@
 <template>
   <div class="level_content">
-    <el-popover placement="bottom-end" trigger="hover">
+    <el-popover placement="bottom-start" trigger="hover" :open-delay="200">
       <div class="content">
         <div><span>Lv1</span>0~300 积分</div>
         <div><span>Lv2</span>300~800 积分</div>
