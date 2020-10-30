@@ -122,7 +122,7 @@ public class DaoTest {
     public void testUpdateScore(){
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
         UserMapper userMapper = context.getBean(UserMapper.class);
-        int flag = userMapper.updateUserScore(1, 3);
+        int flag = userMapper.updateUserScore(1, 2, 3);
         System.out.println(flag);
     }
 }

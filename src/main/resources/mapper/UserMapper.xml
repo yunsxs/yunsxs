@@ -86,6 +86,6 @@
 
 <!--    修改积分-->
     <update id="updateUserScore">
-        UPDATE user set userscore = userscore + #{param2} where userid = #{param1}
+        UPDATE user set userscore = userscore + #{param3}, userlevel = #{param2} where userid = #{param1}
     </update>
 </mapper>

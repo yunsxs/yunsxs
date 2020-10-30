@@ -28,7 +28,7 @@
     <!-- 查询 -->
     <select id="getActionByUserId" resultMap="actionResultMap" parameterType="int">
 		SELECT * FROM action, rule, `user`
-        WHERE rule.rule_id = action.rule_id AND action.userid = `user`.userid AND `user`.userid = 1
+        WHERE rule.rule_id = action.rule_id AND action.userid = `user`.userid AND `user`.userid = #{userId}
         ORDER BY action.action_id DESC
         LIMIT 0,10
 	</select>

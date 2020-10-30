@@ -9,5 +9,5 @@ public interface UserMapper {
     int updateUser(User user);
     User selectUserById(int userId);
 //    增加User的分数
-    int updateUserScore(int userId, int score);
+    int updateUserScore(int userId, int userLevel, int score);
 }

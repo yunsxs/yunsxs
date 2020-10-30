@@ -22,10 +22,10 @@ public class UserController {
     public Result getUser(@RequestParam(name = "id") Integer id) {
         Result result = null;
         User user = userService.getUserById(id);
-        if(user != null){
+        if (user != null) {
             result = new Result(ResultStatus.SUCCESS, user);
             result.setMessage("获取用户信息成功");
-        }else {
+        } else {
             result = new Result(ResultStatus.ERROR);
             result.setMessage("获取用户信息失败");
         }
@@ -58,12 +58,12 @@ public class UserController {
 
     @RequestMapping(value = "/updateScore", method = RequestMethod.GET)
     @ResponseBody
-    public Result updateUserScore(@RequestParam("userId")int userId, @RequestParam("score")int score) {
+    public Result updateUserScore(@RequestParam("userId") int userId, @RequestParam("userLevel") int userLevel, @RequestParam("score") int score) {
         Result result = null;
-        Boolean flag = userService.updateUserScore(userId, score);
-        if(flag){
+        Boolean flag = userService.updateUserScore(userId, userLevel, score);
+        if (flag) {
             result = new Result(ResultStatus.SUCCESS);
-        }else {
+        } else {
             result = new Result(ResultStatus.ERROR);
         }
         return result;

@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Boolean updateUserScore(int userId, int score) {
-        return userMapper.updateUserScore(userId, score) > 0 ? true : false;
+    public Boolean updateUserScore(int userId, int userLevel, int score) {
+        return userMapper.updateUserScore(userId, userLevel, score) > 0 ? true : false;
     }
 }
