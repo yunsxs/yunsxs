@@ -4,7 +4,12 @@
       <div slot="content">
         <div class="score_title">
           <span>积分：{{ score }}</span>
-          <el-tooltip class="item" effect="dark" placement="right-start" :enterable="false">
+          <el-tooltip
+            class="item"
+            effect="dark"
+            placement="right-start"
+            :enterable="false"
+          >
             <i class="el-icon-s-opportunity"></i>
             <div slot="content">
               <p>1.每日签到获得2积分</p>
@@ -121,5 +126,9 @@ export default {
   color: #409eff;
   cursor: pointer;
   font-size: 18px;
+}
+
+.list_a:hover span{
+  color: red;
 }
 </style>
